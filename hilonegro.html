@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilo Negro - Restaurantes | México</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .hero-image {
+            background-image: url('https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-position: center;
+            background-size: cover;
+            height: 80vh;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .menu-item {
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .location-card {
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .review-card {
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .promo-card {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-white text-3xl font-bold">HILO NEGRO</h1>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-white hover:text-gray-300 nav-link">Inicio</a>
+                <a href="#promociones" class="text-white hover:text-gray-300 nav-link">Promociones</a>
+                <a href="#menu" class="text-white hover:text-gray-300 nav-link">Menú</a>
+                <a href="#sucursales" class="text-white hover:text-gray-300 nav-link">Sucursales</a>
+                <a href="#reservaciones" class="text-white hover:text-gray-300 nav-link">Reservaciones</a>
+                <a href="#reseñas" class="text-white hover:text-gray-300 nav-link">Reseñas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-image flex items-center">
+        <div class="hero-overlay flex items-center">
+            <div class="container mx-auto px-4 py-32 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">HILO NEGRO</h1>
+                <p class="text-xl md:text-2xl mb-8">Experimenta lo desconocido</p>
+                <p class="text-lg md:text-xl mb-12 max-w-xl mx-auto">Nuestra cocina busca crear experiencias únicas, con
+                    sabores y combinaciones arriesgadas pero meticulosamente estudiadas y aprobadas.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#menu"
+                        class="bg-white text-black px-8 py-3 rounded-full hover:bg-gray-200 transition duration-300">Ver
+                        Menú</a>
+                    <a href="#reservaciones"
+                        class="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition duration-300">Reservar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Section -->
+    <section id="promociones" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4 text-center">Promociones Especiales</h2>
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto">Disfruta de nuestras promociones exclusivas en todas
+                nuestras sucursales.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- 2x1 Promo -->
+                <div class="bg-black border-2 border-red-600 promo-card">
+                    <div class="p-8 text-center">
+                        <h3 class="text-4xl font-bold text-red-600 mb-4">2 x 1</h3>
+                        <h4 class="text-2xl text-red-600 font-bold mb-6">EN PIZZAS</h4>
+                        <p class="text-xl mb-6">MARTES Y MIÉRCOLES</p>
+                        <p class="text-lg mb-8">DE 2:00 PM A 8:00 PM</p>
+                        <p class="text-lg text-red-600">EN TODAS LAS SUCURSALES</p>
+                    </div>
+                </div>
+
+                <!-- Jueves de Amigos Promo -->
+                <div class="bg-black border-2 border-red-600 promo-card">
+                    <div class="p-8 text-center">
+                        <h3 class="text-4xl font-bold mb-4">JUEVES</h3>
+                        <h4 class="text-3xl font-bold mb-6">DE AMIGOS</h4>
+                        <p class="text-xl mb-4">Disfruta de nuestros cócteles</p>
+                        <p class="text-lg mb-8">a precio especial de 14:00 a 20:00</p>
+                        <p class="text-lg text-red-600">EN TODAS LAS SUCURSALES</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white text-black">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="Pizza artesanal" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6">Nuestra Historia</h2>
+                    <p class="text-lg mb-6">En Hilo Negro creamos pizzas artesanales con los ingredientes más frescos y
+                        de la más alta calidad. Cada pizza es preparada con cuidado meticuloso y horneada en nuestros
+                        hornos tradicionales.</p>
+                    <p class="text-lg mb-8">Nuestra pasión por la gastronomía italiana se refleja en cada platillo,
+                        fusionando técnicas tradicionales con sabores mexicanos para crear experiencias únicas.</p>
+                    <div class="flex space-x-6">
+                        <div>
+                            <p class="text-3xl font-bold">4.7</p>
+                            <p class="text-gray-600">Calificación</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold">5</p>
+                            <p class="text-gray-600">Sucursales</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold">+1000</p>
+                            <p class="text-gray-600">Reseñas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4 text-center">Nuestro Menú</h2>
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto">Explora nuestra variedad de pizzas artesanales y
+                especialidades de la casa, preparadas con los mejores ingredientes y técnicas italianas.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Pizza 1 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item">
+                    <img src="https://images.rappi.com.mx/products/tmp8950281812383928640244654141.png?d=300x300&e=webp&q=10"
+                        alt="Salchicha Italiana" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Salchicha Italiana</h3>
+                        <p class="text-gray-400 mb-4">Pizza de 35 cm con salsa pomodoro, queso mozzarella, salchicha
+                            italiana, espinaca, cebolla morada, pimiento rojo y rodajas de aceitunas negras.</p>
+                        <p class="text-xl font-bold">$312 MXN</p>
+                    </div>
+                </div>
+
+                <!-- Pizza 2 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item">
+                    <img src="https://images.rappi.com.mx/products/tmp8950281913288117203009922652.png?d=300x300&e=webp&q=10"
+                        alt="Mix De Hongos Con Aceite De Trufa" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mix De Hongos Con Aceite De Trufa</h3>
+                        <p class="text-gray-400 mb-4">Pizza de 35 cm con salsa pomodoro, queso mozzarella, mix de hongos
+                            y aceite de trufa.</p>
+                        <p class="text-xl font-bold">$325 MXN</p>
+                    </div>
+                </div>
+
+                <!-- Pizza 3 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item">
+                    <img src="https://images.rappi.com.mx/products/tmp895028214491715494408457166.png?d=300x300&e=webp&q=10"
+                        alt="Pizza Margarita" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pizza Margarita</h3>
+                        <p class="text-gray-400 mb-4">Pizza de 35 cm con salsa pomodoro, queso mozzarella y hojas de
+                            albahaca.</p>
+                        <p class="text-xl font-bold">$270 MXN</p>
+                    </div>
+                </div>
+
+                <!-- Pizza 4 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item">
+                    <img src="https://images.rappi.com.mx/products/tmp8950282211007574922972036216.png?d=300x300&e=webp&q=10"
+                        alt="Prosciutto" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Prosciutto</h3>
+                        <p class="text-gray-400 mb-4">Pizza de 35 cm con salsa pomodoro, queso mozarella, arúgula y
+                            prosciutto.</p>
+                        <p class="text-xl font-bold">$345 MXN</p>
+                    </div>
+                </div>
+
+                <!-- Pizza 5 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item">
+                    <img src="https://images.rappi.com.mx/products/tmp8950282610193527131035776762.png?d=300x300&e=webp&q=10"
+                        alt="Pepperoni" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pepperoni</h3>
+                        <p class="text-gray-400 mb-4">Pizza de 35 cm con salsa pomodoro, pepperoni, queso mozzarella y
+                            rodajas de aceitunas negras.</p>
+                        <p class="text-xl font-bold">$310 MXN</p>
+                    </div>
+                </div>
+
+                <!-- Pizza 6 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden menu-item">
+                    <img src="https://images.rappi.com.mx/products/tmp895028301448820574906039400.png?d=300x300&e=webp&q=10"
+                        alt="Meat Lover" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Meat Lover</h3>
+                        <p class="text-gray-400 mb-4">Pizza de 35 cm con base de salsa pomodoro, queso mozzarella,
+                            tocino, bolitas de carne y salchicha italiana.</p>
+                        <p class="text-xl font-bold">$340 MXN</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://drive.google.com/file/d/1EQQ4oq2MOuT4LSdFa4ZZCW2K4pE1ZAWo/view?fbclid=PAZXh0bgNhZW0CMTEAAaePr8rCfk3PnTrY9CjmHaYgt_KKE1EMD2zuAy01fxSuiMH2lD7jQ4SBaMVQjA_aem_p3RhEV5e3QGMIjA-7TidPA"
+                    target="_blank"
+                    class="bg-white text-black px-8 py-3 rounded-full hover:bg-gray-200 transition duration-300">Ver
+                    Menú Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="sucursales" class="py-20 bg-white text-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4 text-center">Nuestras Sucursales</h2>
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto">Encuéntranos en las mejores zonas de la Ciudad de
+                México y Cuernavaca.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Location 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden location-card bg-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Hilo Negro Condesa</h3>
+                        <p class="text-gray-600 mb-4">Campeche 439, Hipódromo Condesa, Cuauhtémoc, 06140 Ciudad de
+                            México, CDMX</p>
+                        <div class="mb-4">
+                            <p class="mb-1"><strong>Horario:</strong></p>
+                            <p class="text-gray-600">Lunes - Sábado: 1:00 PM - 11:00 PM</p>
+                            <p class="text-gray-600">Domingo: 1:00 PM - 9:00 PM</p>
+                        </div>
+                        <p class="text-gray-600 mb-4"><strong>Teléfono:</strong> +52 55 5922 7868</p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Terraza</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Bar</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Estacionamiento</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="tel:+525559227868" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar
+                            </a>
+                            <a href="https://maps.google.com/?q=Campeche+439,+Hipódromo+Condesa,+Cuauhtémoc,+06140+Ciudad+de+México,+CDMX"
+                                target="_blank" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Ver en mapa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden location-card bg-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Hilo Negro Tlalpan</h3>
+                        <p class="text-gray-600 mb-4">Plaza de la Constitución 1-local 17 c, Tlalpan Centro I, Tlalpan,
+                            14000 Ciudad de México, CDMX</p>
+                        <div class="mb-4">
+                            <p class="mb-1"><strong>Horario:</strong></p>
+                            <p class="text-gray-600">Lunes - Sábado: 1:00 PM - 11:00 PM</p>
+                            <p class="text-gray-600">Domingo: 1:00 PM - 9:00 PM</p>
+                        </div>
+                        <p class="text-gray-600 mb-4"><strong>Teléfono:</strong> +52 55 5719 9415</p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Terraza</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Bar</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Estacionamiento</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="tel:+525557199415" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar
+                            </a>
+                            <a href="https://maps.google.com/?q=Plaza+de+la+Constitución+1-local+17+c,+Tlalpan+Centro+I,+Tlalpan,+14000+Ciudad+de+México,+CDMX"
+                                target="_blank" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Ver en mapa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden location-card bg-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Hilo Negro Coyoacán</h3>
+                        <p class="text-gray-600 mb-4">Fernández Leal 96-local A, La Concepción, Coyoacán, 04020 Ciudad
+                            de México, CDMX</p>
+                        <div class="mb-4">
+                            <p class="mb-1"><strong>Horario:</strong></p>
+                            <p class="text-gray-600">Martes - Sábado: 1:00 PM - 10:00 PM</p>
+                            <p class="text-gray-600">Domingo: 1:00 PM - 9:00 PM</p>
+                            <p class="text-gray-600">Lunes: Cerrado</p>
+                        </div>
+                        <p class="text-gray-600 mb-4"><strong>Teléfono:</strong> +52 55 1722 9586</p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Terraza</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Bar</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Pet Friendly</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="tel:+525517229586" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar
+                            </a>
+                            <a href="https://maps.google.com/?q=Fernández+Leal+96-local+A,+La+Concepción,+Coyoacán,+04020+Ciudad+de+México,+CDMX"
+                                target="_blank" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Ver en mapa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden location-card bg-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Hilo Negro Galerías Coapa</h3>
+                        <p class="text-gray-600 mb-4">Calz. del Hueso 519, Coapa, Acoxpa, Tlalpan, 14300 Ciudad de
+                            México, CDMX</p>
+                        <div class="mb-4">
+                            <p class="mb-1"><strong>Horario:</strong></p>
+                            <p class="text-gray-600">Lunes - Sábado: 1:00 PM - 11:00 PM</p>
+                            <p class="text-gray-600">Domingo: 12:00 PM - 9:00 PM</p>
+                        </div>
+                        <p class="text-gray-600 mb-4"><strong>Teléfono:</strong> +52 55 5684 4213</p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Centro Comercial</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Bar</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Estacionamiento</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="tel:+525556844213" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar
+                            </a>
+                            <a href="https://maps.google.com/?q=Calz.+del+Hueso+519,+Coapa,+Acoxpa,+Tlalpan,+14300+Ciudad+de+México,+CDMX"
+                                target="_blank" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Ver en mapa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden location-card bg-gray-100">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Hilo Negro Cuernavaca</h3>
+                        <p class="text-gray-600 mb-4">Iguala 29A, Vista Hermosa, 62290 Cuernavaca, Morelos</p>
+                        <div class="mb-4">
+                            <p class="mb-1"><strong>Horario:</strong></p>
+                            <p class="text-gray-600">Martes - Jueves: 2:00 PM - 11:00 PM</p>
+                            <p class="text-gray-600">Viernes - Sábado: 2:00 PM - 2:00 AM</p>
+                            <p class="text-gray-600">Domingo - Lunes: Cerrado</p>
+                        </div>
+                        <p class="text-gray-600 mb-4"><strong>Teléfono:</strong> +52 777 791 0858</p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Terraza</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Fine Dining</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Cócteles</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="tel:+527777910858" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar
+                            </a>
+                            <a href="https://maps.google.com/?q=Iguala+29A,+Vista+Hermosa,+62290+Cuernavaca,+Morelos"
+                                target="_blank" class="inline-flex items-center text-black hover:text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Ver en mapa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservaciones" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4 text-center">Reservaciones</h2>
+                <p class="text-xl text-center mb-10 max-w-2xl mx-auto">Para hacer una reservación, llama directamente a
+                    la sucursal de tu preferencia o utiliza nuestra plataforma en línea.</p>
+
+                <div class="bg-gray-900 rounded-lg p-8 mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Llama para reservar</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-black p-6 rounded-lg text-center">
+                            <h4 class="text-xl font-bold mb-2">Condesa</h4>
+                            <p class="mb-4">+52 55 5922 7868</p>
+                            <a href="tel:+525559227868"
+                                class="inline-flex items-center bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition duration-300">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar ahora
+                            </a>
+                        </div>
+                        <div class="bg-black p-6 rounded-lg text-center">
+                            <h4 class="text-xl font-bold mb-2">Tlalpan</h4>
+                            <p class="mb-4">+52 55 5719 9415</p>
+                            <a href="tel:+525557199415"
+                                class="inline-flex items-center bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition duration-300">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar ahora
+                            </a>
+                        </div>
+                        <div class="bg-black p-6 rounded-lg text-center">
+                            <h4 class="text-xl font-bold mb-2">Coyoacán</h4>
+                            <p class="mb-4">+52 55 1722 9586</p>
+                            <a href="tel:+525517229586"
+                                class="inline-flex items-center bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition duration-300">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar ahora
+                            </a>
+                        </div>
+                        <div class="bg-black p-6 rounded-lg text-center">
+                            <h4 class="text-xl font-bold mb-2">Galerías Coapa</h4>
+                            <p class="mb-4">+52 55 5684 4213</p>
+                            <a href="tel:+525556844213"
+                                class="inline-flex items-center bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition duration-300">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar ahora
+                            </a>
+                        </div>
+                        <div class="bg-black p-6 rounded-lg text-center md:col-span-2">
+                            <h4 class="text-xl font-bold mb-2">Cuernavaca</h4>
+                            <p class="mb-4">+52 777 791 0858</p>
+                            <a href="tel:+527777910858"
+                                class="inline-flex items-center bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition duration-300">
+                                <i class="fas fa-phone-alt mr-2"></i> Llamar ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reseñas" class="py-20 bg-white text-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4 text-center">Lo que dicen nuestros clientes</h2>
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto">Descubre por qué nuestros clientes nos aman y
+                regresan por más.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="border border-gray-200 rounded-lg p-6 review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="ml-2">5.0</p>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Las pizzas son excelentes, con ingredientes originales que combinan
+                        perfectamente. El personal muy amable, por lo que quisimos volver y volvimos."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-gray-700 font-bold">MR</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">María Rodríguez</p>
+                            <p class="text-gray-500 text-sm">Hilo Negro Condesa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="border border-gray-200 rounded-lg p-6 review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="ml-2">5.0</p>
+                    </div>
+                    <p class="text-gray-600 mb-4">"La comida es muy deliciosa, el ambiente y los precios son buenos,
+                        volvería. Recomiendo la pasta Alfredo y la bebida de jengibre sin alcohol que me trajeron, me
+                        dejó fascinado."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-gray-700 font-bold">JL</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Juan López</p>
+                            <p class="text-gray-500 text-sm">Hilo Negro Tlalpan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="border border-gray-200 rounded-lg p-6 review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="ml-2">4.7</p>
+                    </div>
+                    <p class="text-gray-600 mb-4">"La de salami es muy buena y trae bastantes rebanadas de salami, pero
+                        la que se llevó las palmas de la comida fue la de tocino. Definitivamente regresaré."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-gray-700 font-bold">AH</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Ana Hernández</p>
+                            <p class="text-gray-500 text-sm">Hilo Negro Galerías Coapa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="border border-gray-200 rounded-lg p-6 review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="ml-2">5.0</p>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Los clientes destacan constantemente el menú diverso, con opciones
+                        vegetarianas únicas y pizzas deliciosas para los amantes de la carne, elaboradas con
+                        ingredientes de alta calidad."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-gray-700 font-bold">CG</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Carlos Gutiérrez</p>
+                            <p class="text-gray-500 text-sm">Hilo Negro Coyoacán</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="border border-gray-200 rounded-lg p-6 review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="ml-2">5.0</p>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Las pizzas, las pastas, las ensaladas, las bebidas, todo lo que
+                        pedimos muy rico y muy buen servicio. El ambiente es perfecto para una cena romántica o con
+                        amigos."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-gray-700 font-bold">LM</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Laura Martínez</p>
+                            <p class="text-gray-500 text-sm">Hilo Negro Condesa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="border border-gray-200 rounded-lg p-6 review-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="ml-2">4.8</p>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Pedí un hilo negro con vino, refresco de manzana y frutos rojos. Y de
+                        entrada pedimos una alcachofa con salsa de quesos espolvoreada. La combinación fue increíble,
+                        ¡volveré pronto!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-gray-700 font-bold">FS</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Fernando Suárez</p>
+                            <p class="text-gray-500 text-sm">Hilo Negro Cuernavaca</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4 text-center">Síguenos en Instagram</h2>
+            <p class="text-xl text-center mb-12">@hilonegropizzeria</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                <div class="aspect-square bg-gray-800"></div>
+                <div class="aspect-square bg-gray-800"></div>
+                <div class="aspect-square bg-gray-800"></div>
+                <div class="aspect-square bg-gray-800"></div>
+                <div class="aspect-square bg-gray-800"></div>
+                <div class="aspect-square bg-gray-800"></div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="https://www.instagram.com/hilonegropizzeria/" target="_blank"
+                    class="inline-flex items-center bg-white text-black px-8 py-3 rounded-full hover:bg-gray-200 transition duration-300">
+                    <i class="fab fa-instagram mr-2"></i> Seguir en Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">HILO NEGRO</h3>
+                    <p class="mb-6">Experimenta lo desconocido. Nuestra cocina busca crear experiencias únicas, con
+                        sabores y combinaciones arriesgadas pero meticulosamente estudiadas y aprobadas.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/hilonegropizzeria/" target="_blank"
+                            class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contacto</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Múltiples ubicaciones en CDMX y Cuernavaca</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                            <span>Consulta el teléfono de cada sucursal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>contacto@hilonegro.com.mx</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Horarios</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>Lunes - Jueves:</span>
+                            <span>1:00 PM - 11:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Viernes - Sábado:</span>
+                            <span>1:00 PM - 11:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Domingo:</span>
+                            <span>1:00 PM - 9:00 PM</span>
+                        </li>
+                        <li class="mt-4 text-sm">*Los horarios pueden variar según la sucursal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Hilo Negro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll animation for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add fixed navigation class on scroll
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-opacity-95');
+            } else {
+                nav.classList.remove('bg-opacity-95');
+            }
+        });
+    </script>
+</body>
+
+</html>
