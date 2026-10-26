@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de privacidad (borrador) | Hilo Negro</title>
+    <meta name="description"
+        content="Borrador del Aviso de Privacidad Integral de Hilo Negro para el sitio web y la aplicación de lealtad. Pendiente de aprobación.">
+    <meta name="robots" content="noindex">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        mark.pendiente {
+            background-color: #facc15;
+            color: #111;
+            padding: 0.1rem 0.35rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+        }
+
+        .legal-anchor {
+            scroll-margin-top: 6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-white text-3xl font-bold">HILO NEGRO</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="/#inicio" class="text-white hover:text-gray-300 nav-link">Inicio</a>
+                <a href="/#promociones" class="text-white hover:text-gray-300 nav-link">Promociones</a>
+                <a href="/#menu" class="text-white hover:text-gray-300 nav-link">Menú</a>
+                <a href="/#sucursales" class="text-white hover:text-gray-300 nav-link">Sucursales</a>
+                <a href="/#reservaciones" class="text-white hover:text-gray-300 nav-link">Reservaciones</a>
+                <a href="/#reseñas" class="text-white hover:text-gray-300 nav-link">Reseñas</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20">
+        <div class="bg-yellow-400 text-black px-4 py-4 text-center" role="note">
+            <p class="max-w-4xl mx-auto text-sm md:text-base font-semibold">
+                <i class="fas fa-exclamation-triangle mr-2" aria-hidden="true"></i>
+                Borrador pendiente de aprobación. Este texto no es definitivo: quien opera Hilo Negro debe revisarlo y
+                autorizarlo antes de tratarlo como versión vigente. No constituye asesoría legal.
+            </p>
+        </div>
+
+        <main id="contenido" class="container mx-auto px-4 py-12 max-w-3xl">
+            <p class="text-yellow-400 text-sm font-semibold tracking-wide uppercase mb-3">Borrador</p>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Aviso de Privacidad Integral</h1>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Este aviso describe el tratamiento de datos personales relacionado con el sitio
+                www.hilonegro.com.mx y con la aplicación de lealtad de Hilo Negro
+                (<mark class="pendiente">[PENDIENTE: nombre con el que la app aparecerá en App Store y Google Play]</mark>).
+                Está redactado como borrador para alinearlo con la Ley Federal de Protección de Datos Personales en
+                Posesión de los Particulares publicada en el Diario Oficial de la Federación el 20 de marzo de 2025
+                (texto vigente consultado con última reforma publicada el 14 de noviembre de 2025), en particular sus
+                artículos 7, 8, 9, 10, 14, 15, 16, 24, 28, 31, 34, 35 y 36.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-8">
+                Las marcas amarillas son datos que este borrador no completa porque no constan en el sitio ni fueron
+                confirmados. Hay que sustituirlas antes de aprobar el texto. La fecha de esta versión es el
+                <time datetime="2026-10-26">26 de octubre de 2026</time>.
+            </p>
+
+            <nav aria-label="Contenido del aviso" class="bg-gray-900 rounded-lg p-6 mb-12">
+                <p class="font-semibold mb-3">Contenido</p>
+                <ol class="list-decimal pl-5 space-y-2 text-gray-300">
+                    <li><a class="underline hover:text-white" href="#identidad">Identidad y domicilio del responsable</a></li>
+                    <li><a class="underline hover:text-white" href="#datos">Datos personales tratados</a></li>
+                    <li><a class="underline hover:text-white" href="#finalidades-primarias">Finalidades primarias</a></li>
+                    <li><a class="underline hover:text-white" href="#finalidades-secundarias">Finalidades secundarias</a></li>
+                    <li><a class="underline hover:text-white" href="#encargados">Encargados y otros proveedores</a></li>
+                    <li><a class="underline hover:text-white" href="#transferencias">Transferencias</a></li>
+                    <li><a class="underline hover:text-white" href="#arco">Derechos ARCO</a></li>
+                    <li><a class="underline hover:text-white" href="#revocacion">Revocación del consentimiento</a></li>
+                    <li><a class="underline hover:text-white" href="#limitacion">Limitar el uso o la divulgación</a></li>
+                    <li><a class="underline hover:text-white" href="#cookies">Cookies y tecnologías de rastreo</a></li>
+                    <li><a class="underline hover:text-white" href="#conservacion">Conservación y eliminación</a></li>
+                    <li><a class="underline hover:text-white" href="#cambios">Cambios a este aviso</a></li>
+                    <li><a class="underline hover:text-white" href="#autoridad">Autoridad de protección de datos</a></li>
+                    <li><a class="underline hover:text-white" href="#contacto">Contacto</a></li>
+                </ol>
+            </nav>
+
+            <section id="identidad" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">1. Identidad y domicilio del responsable</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    El nombre comercial que usa este sitio es Hilo Negro. La identidad legal del responsable del
+                    tratamiento es
+                    <mark class="pendiente">[PENDIENTE: razón social o nombre de la persona física responsable]</mark>.
+                    Para identificarlo con mayor claridad, si el titular decide publicarlo, se añadirá el
+                    <mark class="pendiente">[PENDIENTE: RFC, si el titular decide publicarlo]</mark>.
+                    La ley vigente exige identidad y domicilio; no exige por sí sola el RFC.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    El domicilio del responsable para efectos de este aviso y para oír solicitudes de datos personales es
+                    <mark class="pendiente">[PENDIENTE: domicilio del responsable para efectos de este aviso]</mark>.
+                    Las direcciones de las sucursales que hoy publica el sitio (Condesa, Tlalpan, Del Valle, Coyoacán,
+                    Galerías Coapa y Coyoacán Centro, en la Ciudad de México) son locales de atención al público. Este
+                    borrador no las da por domicilio legal del responsable.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Quien dará trámite a las solicitudes de las personas titulares es
+                    <mark class="pendiente">[PENDIENTE: persona o departamento que tramita datos personales]</mark>.
+                    El medio de contacto es
+                    <mark class="pendiente">[PENDIENTE: correo de contacto y privacidad]</mark>.
+                </p>
+            </section>
+
+            <section id="datos" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">2. Datos personales que se tratan</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    La aplicación de lealtad permite crear una cuenta con correo electrónico, acumular visitas o sellos,
+                    canjear recompensas, y que el personal de la sucursal lea un código QR con la cámara del dispositivo.
+                    Al acreditar una visita se registran el folio y el importe del ticket. Las notificaciones push están
+                    previstas. El sitio, por su parte, es una página informativa: no tiene formulario ni cuenta de cliente.
+                </p>
+                <div class="overflow-x-auto mb-6">
+                    <table class="w-full text-left text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-600">
+                                <th class="py-3 pr-4 font-semibold align-bottom">Dato</th>
+                                <th class="py-3 pr-4 font-semibold align-bottom">Origen</th>
+                                <th class="py-3 font-semibold align-bottom">Situación en este borrador</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-gray-800">
+                                <td class="py-3 pr-4 align-top">Correo electrónico</td>
+                                <td class="py-3 pr-4 align-top">App, al crear la cuenta e iniciar sesión</td>
+                                <td class="py-3 align-top">Descrito para la app</td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-3 pr-4 align-top">Datos de autenticación de la sesión</td>
+                                <td class="py-3 pr-4 align-top">App, a través del servicio de acceso</td>
+                                <td class="py-3 align-top">
+                                    <mark class="pendiente">[PENDIENTE: método de acceso (contraseña, enlace al correo u otro)]</mark>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-3 pr-4 align-top">Nombre, teléfono, fecha de nacimiento u otros datos de identificación</td>
+                                <td class="py-3 pr-4 align-top">App, solo si el registro los pide</td>
+                                <td class="py-3 align-top">
+                                    <mark class="pendiente">[PENDIENTE: datos de identificación adicionales que solicite la app, si los hay]</mark>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-3 pr-4 align-top">Visitas o sellos, recompensas generadas, canjeadas y canceladas</td>
+                                <td class="py-3 pr-4 align-top">App</td>
+                                <td class="py-3 align-top">Descrito para la app</td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-3 pr-4 align-top">Folio e importe del ticket</td>
+                                <td class="py-3 pr-4 align-top">App, al registrar la visita</td>
+                                <td class="py-3 align-top">
+                                    El importe puede ser un dato patrimonial. El artículo 7 de la ley exige consentimiento
+                                    expreso para datos financieros o patrimoniales, con las excepciones de los artículos 9 y 36.
+                                    <mark class="pendiente">[PENDIENTE: confirmar con un abogado si el importe del ticket es dato patrimonial]</mark>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-3 pr-4 align-top">Código QR de la cuenta y uso de la cámara para leerlo</td>
+                                <td class="py-3 pr-4 align-top">App, en la sucursal</td>
+                                <td class="py-3 align-top">
+                                    La cámara se usa para leer el QR.
+                                    <mark class="pendiente">[PENDIENTE: confirmar si la cámara solo lee el código QR o si se guarda alguna imagen]</mark>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-3 pr-4 align-top">Identificador de notificaciones push</td>
+                                <td class="py-3 pr-4 align-top">App, cuando la función exista</td>
+                                <td class="py-3 align-top">
+                                    <mark class="pendiente">[PENDIENTE: confirmar si las notificaciones push ya están activas]</mark>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-3 pr-4 align-top">Datos de cuentas del personal que escanea el QR</td>
+                                <td class="py-3 pr-4 align-top">App de operación en sucursal</td>
+                                <td class="py-3 align-top">
+                                    <mark class="pendiente">[PENDIENTE: cuentas del personal de sucursal y cómo se eliminan]</mark>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 pr-4 align-top">Datos técnicos de la visita al sitio (dirección IP, tipo de navegador, registros del alojamiento)</td>
+                                <td class="py-3 pr-4 align-top">Sitio web</td>
+                                <td class="py-3 align-top">
+                                    El HTML del sitio no incluye analítica propia. Los proveedores de tipografía, estilos y
+                                    alojamiento pueden recibir datos técnicos.
+                                    <mark class="pendiente">[PENDIENTE: qué registros técnicos conserva el alojamiento del sitio y por cuánto tiempo]</mark>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Datos sensibles</h3>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    El artículo 2, fracción VI, considera sensibles, de forma enunciativa, los datos que revelen origen
+                    racial o étnico, estado de salud, información genética, creencias religiosas, filosóficas y morales,
+                    opiniones políticas y preferencia sexual. El funcionamiento descrito de la app y del sitio no incluye
+                    esas categorías. El uso de la cámara para leer un QR no se describe aquí como identificación biométrica.
+                    <mark class="pendiente">[PENDIENTE: confirmar que no se tratan datos sensibles ni biométricos]</mark>
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    La edad mínima para crear una cuenta es
+                    <mark class="pendiente">[PENDIENTE: edad mínima para crear una cuenta]</mark>.
+                    Este borrador no afirma que la app se dirija a niñas, niños o adolescentes.
+                </p>
+            </section>
+
+            <section id="finalidades-primarias" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">3. Finalidades primarias</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Estas finalidades son las necesarias para prestar el sitio, la cuenta y el programa de lealtad.
+                    Cuando el tratamiento sea necesario para cumplir la relación entre usted y el responsable, el
+                    artículo 9, fracción IV, permite realizarlo sin un consentimiento adicional. Aun así se informan aquí
+                    para que pueda decidir con conocimiento de causa.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                    <li>Crear, autenticar y administrar la cuenta de lealtad.</li>
+                    <li>Registrar visitas o sellos y asociar el folio y el importe del ticket correspondiente.</li>
+                    <li>Mostrar el código QR y permitir que el personal de la sucursal lo lea para acreditar la visita o el canje.</li>
+                    <li>Generar recompensas, permitir su canje y, en el comportamiento actual de la app al borrar la cuenta, cancelar las recompensas no canjeadas.</li>
+                    <li>Atender solicitudes de derechos ARCO, de revocación del consentimiento y de eliminación de cuenta. La página pública para pedir la eliminación es <a class="underline hover:text-white" href="/eliminar-cuenta/">www.hilonegro.com.mx/eliminar-cuenta</a>.</li>
+                    <li>Proteger la cuenta y el servicio frente a un uso no autorizado.</li>
+                    <li>Publicar en el sitio el menú, las sucursales, las promociones y los medios de contacto del negocio.</li>
+                    <li>Operar el programa en las sucursales que correspondan:
+                        <mark class="pendiente">[PENDIENTE: en qué sucursales opera el programa de lealtad]</mark>.
+                    </li>
+                </ul>
+            </section>
+
+            <section id="finalidades-secundarias" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">4. Finalidades secundarias, que requieren su consentimiento</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    El artículo 15, fracción III, pide distinguir las finalidades que requieren el consentimiento de la
+                    persona titular. Este borrador las presenta como finalidades secundarias: no son indispensables para
+                    mantener la cuenta ni para registrar una visita. Si usted no las acepta, o si más adelante revoca ese
+                    consentimiento, el responsable debe poder seguir prestando las finalidades primarias.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300 mb-4">
+                    <li>Enviar promociones, novedades del menú o avisos del programa por notificación push, cuando esa función esté activa.</li>
+                    <li>
+                        Cualquier otra finalidad distinta, por ejemplo correo promocional, perfilamiento o publicidad en redes:
+                        <mark class="pendiente">[PENDIENTE: otras finalidades secundarias, si las hay]</mark>.
+                    </li>
+                </ul>
+                <p class="text-gray-300 leading-relaxed">
+                    El consentimiento es una manifestación libre, específica e informada. Por regla general puede ser
+                    tácito, salvo cuando la ley exija que sea expreso, como ocurre con los datos financieros o
+                    patrimoniales y con los datos sensibles (artículos 7 y 8). Puede revocarlo en cualquier momento por
+                    el medio de la sección 8. La revocación no tiene efectos retroactivos.
+                </p>
+            </section>
+
+            <section id="encargados" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">5. Encargados y otros proveedores</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Una persona encargada trata datos por cuenta del responsable. La ley distingue a esa persona de una
+                    transferencia, que es la comunicación a alguien distinto de la persona titular, del responsable y de
+                    la persona encargada. Los proveedores siguientes se describen como encargados o como infraestructura
+                    que interviene en el servicio. Falta confirmar el país de alojamiento y el contrato de cada uno:
+                    <mark class="pendiente">[PENDIENTE: país donde cada encargado aloja los datos y existencia de contrato]</mark>.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300 mb-4">
+                    <li><strong class="text-white">Supabase.</strong> Autenticación de la cuenta, base de datos de la app y, en su caso, el envío del correo de acceso.</li>
+                    <li>
+                        <strong class="text-white">Proveedor de correo.</strong>
+                        <mark class="pendiente">[PENDIENTE: nombre del proveedor de correo, si es distinto de Supabase]</mark>
+                    </li>
+                    <li><strong class="text-white">Expo, Apple y Google.</strong> Canal previsto para notificaciones push. Expo entrega la notificación; Apple (servicio de notificaciones push de Apple) y Google (Firebase Cloud Messaging y servicios de Google Play) pueden intervenir según el sistema del teléfono.</li>
+                    <li><strong class="text-white">GitHub Pages.</strong> Alojamiento de este sitio. Un cambio en la rama de publicación del repositorio actualiza el sitio.</li>
+                    <li><strong class="text-white">Google Fonts y jsDelivr.</strong> El sitio carga la tipografía Montserrat desde Google y las hojas de estilo de Tailwind y Font Awesome desde jsDelivr. Esas solicitudes pueden transmitir la dirección IP y datos técnicos del navegador a esos proveedores, conforme a sus propios avisos.</li>
+                    <li>
+                        <mark class="pendiente">[PENDIENTE: otros encargados del tratamiento, si los hay]</mark>
+                    </li>
+                </ul>
+                <p class="text-gray-300 leading-relaxed">
+                    Las medidas de seguridad administrativas, técnicas y físicas que el artículo 18 exige al responsable
+                    quedan por describir en la versión pública, si el titular quiere detallarlas:
+                    <mark class="pendiente">[PENDIENTE: medidas de seguridad que el titular quiera describir públicamente]</mark>.
+                </p>
+            </section>
+
+            <section id="transferencias" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">6. Transferencias</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Este borrador no da por existente ninguna transferencia a un tercero distinto de los encargados.
+                    <mark class="pendiente">[PENDIENTE: transferencias a terceros distintos de los encargados]</mark>
+                    También falta definir si cada sucursal es el mismo responsable o un tercero:
+                    <mark class="pendiente">[PENDIENTE: si las sucursales son el mismo responsable o terceros]</mark>.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Si el titular confirma que sí habrá transferencias, el artículo 35 requiere una cláusula que indique
+                    si usted acepta o no la transferencia. El tercero receptor asumiría las mismas obligaciones. Mientras
+                    esa decisión no exista, este borrador no registra aceptación de transferencia alguna.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    El artículo 36 permite ciertas transferencias sin consentimiento, por ejemplo cuando una ley o un
+                    tratado las prevé, cuando son necesarias para un contrato en interés de la persona titular, entre
+                    sociedades del mismo grupo, o para mantener la relación jurídica con el responsable. Ninguno de esos
+                    supuestos se da aquí por cumplido.
+                </p>
+            </section>
+
+            <section id="arco" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">7. Derechos ARCO y cómo ejercerlos</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Usted, o su representante legal, puede ejercer en cualquier momento los derechos de acceso,
+                    rectificación, cancelación y oposición. Ejercer uno no impide ejercer otro.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300 mb-4">
+                    <li><strong class="text-white">Acceso.</strong> Conocer los datos personales que el responsable tenga y las condiciones generales de su tratamiento.</li>
+                    <li><strong class="text-white">Rectificación.</strong> Corregir datos inexactos, incompletos o desactualizados. Hay que indicar las modificaciones y aportar la documentación que las sustente.</li>
+                    <li><strong class="text-white">Cancelación.</strong> Pedir que los datos dejen de estar en posesión del responsable. La cancelación da lugar a un periodo de bloqueo y después a la supresión. Durante el bloqueo los datos solo pueden conservarse para atender responsabilidades nacidas del tratamiento. El responsable puede negar la cancelación en los casos del artículo 25, por ejemplo cuando una ley ordene conservarlos.</li>
+                    <li><strong class="text-white">Oposición.</strong> Oponerse al tratamiento, o pedir que cese, cuando exista causa legítima y su situación lo requiera, o cuando un tratamiento automatizado le produzca efectos jurídicos no deseados o lo afecte de forma significativa en los términos del artículo 26. La oposición no procede si el tratamiento es necesario para cumplir una obligación legal del responsable.</li>
+                </ul>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Envíe la solicitud al
+                    <mark class="pendiente">[PENDIENTE: correo de contacto y privacidad]</mark>,
+                    dirigida a
+                    <mark class="pendiente">[PENDIENTE: persona o departamento que tramita datos personales]</mark>.
+                    El artículo 28 pide que la solicitud incluya:
+                </p>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-300 mb-4">
+                    <li>Su nombre y un domicilio u otro medio para recibir notificaciones.</li>
+                    <li>Los documentos que acrediten su identidad o, en su caso, la identidad y la personalidad de quien la represente. Qué documento se aceptará es
+                        <mark class="pendiente">[PENDIENTE: qué identificación aceptará el responsable para acreditar la identidad]</mark>.
+                    </li>
+                    <li>Una descripción clara y precisa de los datos sobre los que quiere ejercer el derecho, salvo que se trate de acceso.</li>
+                    <li>El derecho que quiere ejercer, o lo que solicita.</li>
+                    <li>Cualquier otro dato que ayude a localizar la información, por ejemplo el correo de la cuenta.</li>
+                </ol>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    El responsable debe comunicar la determinación en un plazo máximo de veinte días hábiles contados
+                    desde que reciba la solicitud. Si resulta procedente, debe hacerla efectiva dentro de los quince días
+                    hábiles siguientes a esa comunicación. Esos plazos pueden ampliarse una sola vez por un periodo igual
+                    cuando las circunstancias lo justifiquen (artículo 31). El ejercicio es gratuito. Solo pueden cobrarse
+                    los costos de reproducción, copias o envío (artículo 34).
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    La respuesta se enviará por el mismo medio en que se presentó la solicitud. Si el responsable niega
+                    el ejercicio, debe informar el motivo. Las causas de improcedencia están en el artículo 33, entre
+                    ellas la falta de acreditación, que los datos no estén en su posesión, que se lesionen derechos de un
+                    tercero, un impedimento legal o que la solicitud ya se hubiera atendido.
+                </p>
+            </section>
+
+            <section id="revocacion" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">8. Revocación del consentimiento</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Puede revocar su consentimiento en cualquier momento. La revocación no tiene efectos retroactivos:
+                    no deshace el tratamiento realizado mientras el consentimiento estuvo vigente (artículo 7).
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Para revocarlo, envíe un correo a
+                    <mark class="pendiente">[PENDIENTE: correo de contacto y privacidad]</mark>
+                    con su nombre, el correo de la cuenta y la finalidad cuyo consentimiento revoca. Indique si la
+                    revocación se refiere solo a las finalidades secundarias o también a alguna finalidad primaria.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Si revoca el consentimiento de una finalidad primaria sin la cual la cuenta no puede operar, el
+                    responsable puede dejar de prestar esa cuenta. La revocación de una finalidad secundaria, como las
+                    promociones, debe dejar intacto el resto del servicio.
+                    <mark class="pendiente">[PENDIENTE: si la revocación y la limitación de uso podrán hacerse dentro de la app]</mark>
+                </p>
+            </section>
+
+            <section id="limitacion" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">9. Opciones para limitar el uso o la divulgación</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Puede limitar el uso de sus datos para las finalidades secundarias por estos medios:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300 mb-4">
+                    <li>Un correo a <mark class="pendiente">[PENDIENTE: correo de contacto y privacidad]</mark> en el que pida dejar de recibir promociones o dejar de usar sus datos para una finalidad secundaria concreta.</li>
+                    <li>Los ajustes del teléfono, para desactivar las notificaciones de la app, cuando existan.</li>
+                    <li>La eliminación de la cuenta, descrita en <a class="underline hover:text-white" href="/eliminar-cuenta/">Eliminar cuenta</a>, cuando lo que desea es terminar el tratamiento asociado a la cuenta y no solo limitarlo.</li>
+                </ul>
+                <p class="text-gray-300 leading-relaxed">
+                    Si el responsable realiza publicidad telefónica, usted puede inscribir su número en el Registro
+                    Público de Consumidores (REPEP) de la Procuraduría Federal del Consumidor.
+                    <mark class="pendiente">[PENDIENTE: si se hace publicidad telefónica]</mark>
+                </p>
+            </section>
+
+            <section id="cookies" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">10. Cookies y tecnologías de rastreo en el sitio</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    El sitio publicado en este repositorio es HTML estático. No contiene un script de analítica, un
+                    píxel de publicidad ni un formulario que escriba una cookie propia. Los enlaces a Facebook, Instagram,
+                    TikTok y Google Maps solo llevan a esos sitios si usted los abre; el HTML no incrusta sus contenidos.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Al cargar la página, el navegador solicita archivos a Google Fonts y a jsDelivr, y el alojamiento en
+                    GitHub Pages puede generar registros técnicos. Esos terceros pueden tratar la dirección IP y datos
+                    del navegador conforme a sus propios avisos. Este borrador no controla esas políticas.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Si más adelante se instalan herramientas de medición o publicidad, este aviso tendrá que decirlo antes
+                    de activarlas:
+                    <mark class="pendiente">[PENDIENTE: herramientas de analítica, píxeles o cookies propias que se lleguen a instalar]</mark>.
+                    Puede limitar las cookies desde la configuración de su navegador. Bloquear los recursos de tipografía
+                    o de estilos puede cambiar la apariencia del sitio, que seguiría mostrando su texto.
+                </p>
+            </section>
+
+            <section id="conservacion" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">11. Conservación, bloqueo y eliminación</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Cuando los datos dejen de ser necesarios para las finalidades de este aviso, el responsable debe
+                    suprimirlos, previo bloqueo en su caso, al terminar el plazo de conservación (artículo 10). El plazo
+                    de cada categoría es
+                    <mark class="pendiente">[PENDIENTE: plazos de conservación de cada categoría de datos]</mark>.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Hay un plazo legal específico de setenta y dos meses, contado desde la fecha en que ocurra el
+                    incumplimiento, solo para datos relativos al incumplimiento de obligaciones contractuales. No es el
+                    plazo general del programa de lealtad. Por separado, puede haber datos que una obligación legal o
+                    fiscal, la seguridad o la prevención de fraude obliguen a conservar:
+                    <mark class="pendiente">[PENDIENTE: datos que deban conservarse por obligación legal, fiscal, seguridad o prevención de fraude, y por cuánto tiempo]</mark>.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    La eliminación de la cuenta de la app tiene hoy, en el software, un comportamiento de anonimización:
+                    se eliminan la cuenta y los datos personales, se cancelan las recompensas no canjeadas, y las filas de
+                    visitas, tickets y recompensas permanecen desvinculadas de la persona. El titular todavía no elige
+                    entre ese resultado y el borrado completo de esas filas.
+                    <mark class="pendiente">[PENDIENTE: elegir entre anonimizar el historial o borrarlo por completo]</mark>
+                    <mark class="pendiente">[PENDIENTE: confirmar con un abogado si el historial desvinculado sigue siendo dato personal]</mark>
+                    El procedimiento para solicitarlo, los dos resultados posibles y el plazo están en
+                    <a class="underline hover:text-white" href="/eliminar-cuenta/">Eliminar cuenta</a>.
+                    El plazo operativo que se publicará es
+                    <mark class="pendiente">[PENDIENTE: plazo para completar la eliminación de la cuenta]</mark>.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Cuando los datos se recaben en la app por un medio electrónico, el artículo 16 pide poner a
+                    disposición un aviso simplificado, con al menos la identidad, los datos tratados, las finalidades que
+                    requieren consentimiento y los medios para limitar el uso, e indicar dónde está este aviso integral.
+                    El texto de esa pantalla es
+                    <mark class="pendiente">[PENDIENTE: texto del aviso simplificado que la app debe mostrar al recabar los datos]</mark>.
+                </p>
+            </section>
+
+            <section id="cambios" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">12. Cambios a este aviso</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    El responsable comunicará los cambios publicando la versión nueva en
+                    <a class="underline hover:text-white" href="/privacidad/">https://www.hilonegro.com.mx/privacidad</a>,
+                    con la fecha de actualización al inicio y al final del texto. El tratamiento para una finalidad que
+                    no esté en el aviso vigente requiere un nuevo consentimiento (artículo 11).
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Falta decidir si, además de esta página, los cambios se avisarán por correo o dentro de la app, y con
+                    qué anticipación:
+                    <mark class="pendiente">[PENDIENTE: si los cambios al aviso se avisarán también por correo o en la app, y con qué anticipación]</mark>.
+                    Si los datos no se obtuvieron de la persona titular, el artículo 17 pide darle a conocer el cambio,
+                    salvo los casos que esa disposición exceptúa.
+                </p>
+            </section>
+
+            <section id="autoridad" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">13. Autoridad y solicitud de protección de derechos</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Si no está de acuerdo con la respuesta del responsable, o si no la recibe en el plazo, puede presentar
+                    una solicitud de protección de derechos ante la Secretaría Anticorrupción y Buen Gobierno, que es la
+                    autoridad que esta ley designa. El artículo 40 da quince días hábiles siguientes a la fecha en que se
+                    le comunique la respuesta. Si no hubo respuesta, puede presentarla a partir de que venza el plazo del
+                    responsable, acompañando la constancia de la fecha en que presentó su solicitud ARCO.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    El medio concreto para presentarla ante esa Secretaría debe confirmarse antes de publicar este aviso,
+                    para no enviar a las personas a un conducto desactualizado:
+                    <mark class="pendiente">[PENDIENTE: medio vigente de la Secretaría Anticorrupción y Buen Gobierno para presentar la solicitud de protección de derechos]</mark>.
+                </p>
+            </section>
+
+            <section id="contacto" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">14. Contacto</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Solicitudes ARCO, revocación del consentimiento, limitación de uso y eliminación de cuenta:
+                    <mark class="pendiente">[PENDIENTE: correo de contacto y privacidad]</mark>,
+                    a la atención de
+                    <mark class="pendiente">[PENDIENTE: persona o departamento que tramita datos personales]</mark>,
+                    con domicilio en
+                    <mark class="pendiente">[PENDIENTE: domicilio del responsable para efectos de este aviso]</mark>.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    También puede leer los <a class="underline hover:text-white" href="/terminos/">Términos y condiciones</a>
+                    y la página <a class="underline hover:text-white" href="/eliminar-cuenta/">Eliminar cuenta</a>.
+                    Los tres textos son borradores.
+                </p>
+            </section>
+
+            <p class="text-gray-400 text-sm">
+                Última actualización de este borrador:
+                <time datetime="2026-10-26">26 de octubre de 2026</time>.
+                No es asesoría legal ni un aviso aprobado.
+            </p>
+        </main>
+    </div>
+
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-4">HILO NEGRO</h2>
+            <p class="mb-6">Conectando sabores, creando experiencias.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.facebook.com/profile.php?id=100067862124499" target="_blank"
+                    class="text-white hover:text-gray-400" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a target="_blank"
+                    href="https://www.instagram.com/hilonegropizzeria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="text-white hover:text-gray-400" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.tiktok.com/@hilonegropizzeria?is_from_webapp=1&sender_device=pc" target="_blank"
+                    class="text-white hover:text-gray-400" aria-label="TikTok"><i class="fab fa-tiktok fa-lg"></i></a>
+            </div>
+            <nav aria-label="Información legal" class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-sm">
+                <a href="/" class="text-gray-300 hover:text-white">Inicio</a>
+                <a href="/privacidad/" class="text-white hover:text-white" aria-current="page">Aviso de privacidad (borrador)</a>
+                <a href="/terminos/" class="text-gray-300 hover:text-white">Términos y condiciones (borrador)</a>
+                <a href="/eliminar-cuenta/" class="text-gray-300 hover:text-white">Eliminar cuenta (borrador)</a>
+            </nav>
+            <p class="text-gray-500">&copy; 2025 Hilo Negro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

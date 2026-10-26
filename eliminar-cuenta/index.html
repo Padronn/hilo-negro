@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar cuenta (borrador) | Hilo Negro</title>
+    <meta name="description"
+        content="Borrador: cómo solicitar la eliminación de la cuenta de la aplicación de lealtad de Hilo Negro desde la app o por correo, sin reinstalarla.">
+    <meta name="robots" content="noindex">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        mark.pendiente {
+            background-color: #facc15;
+            color: #111;
+            padding: 0.1rem 0.35rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+        }
+
+        .legal-anchor {
+            scroll-margin-top: 6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-white text-3xl font-bold">HILO NEGRO</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="/#inicio" class="text-white hover:text-gray-300 nav-link">Inicio</a>
+                <a href="/#promociones" class="text-white hover:text-gray-300 nav-link">Promociones</a>
+                <a href="/#menu" class="text-white hover:text-gray-300 nav-link">Menú</a>
+                <a href="/#sucursales" class="text-white hover:text-gray-300 nav-link">Sucursales</a>
+                <a href="/#reservaciones" class="text-white hover:text-gray-300 nav-link">Reservaciones</a>
+                <a href="/#reseñas" class="text-white hover:text-gray-300 nav-link">Reseñas</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20">
+        <div class="bg-yellow-400 text-black px-4 py-4 text-center" role="note">
+            <p class="max-w-4xl mx-auto text-sm md:text-base font-semibold">
+                <i class="fas fa-exclamation-triangle mr-2" aria-hidden="true"></i>
+                Borrador pendiente de aprobación. Este texto no es definitivo: quien opera Hilo Negro debe revisarlo y
+                autorizarlo antes de tratarlo como versión vigente. No constituye asesoría legal.
+            </p>
+        </div>
+
+        <main id="contenido" class="container mx-auto px-4 py-12 max-w-3xl">
+            <p class="text-yellow-400 text-sm font-semibold tracking-wide uppercase mb-3">Borrador · App de lealtad Hilo Negro</p>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Eliminar tu cuenta</h1>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Esta página es el medio público para pedir la eliminación de la cuenta de la aplicación de lealtad de
+                Hilo Negro
+                (<mark class="pendiente">[PENDIENTE: nombre con el que la app aparecerá en App Store y Google Play]</mark>).
+                Puede usarla quien ya desinstaló la app. No hace falta volver a descargarla para enviar la solicitud.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-8">
+                El sitio www.hilonegro.com.mx no tiene cuentas de cliente. Esta solicitud no borra un Apple ID, una
+                cuenta de Google, una reseña ni una red social. El detalle del tratamiento de datos está en el
+                <a class="underline hover:text-white" href="/privacidad/">Aviso de privacidad</a>.
+            </p>
+
+            <section id="en-la-app" class="legal-anchor mb-10">
+                <h2 class="text-2xl font-bold mb-4">1. Desde la app</h2>
+                <div class="bg-gray-900 rounded-lg p-6">
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Si todavía tiene la aplicación instalada y puede entrar a su cuenta:
+                    </p>
+                    <ol class="list-decimal pl-6 space-y-2 text-gray-300">
+                        <li>Abra la app e inicie sesión con el correo de su cuenta.</li>
+                        <li>Entre a <strong class="text-white">Perfil</strong> o a <strong class="text-white">Más</strong>.</li>
+                        <li>Elija <strong class="text-white">Eliminar mi cuenta</strong>.</li>
+                        <li>Confirme la eliminación en la pantalla que le muestre la app.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="por-correo" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">2. Por correo, sin reinstalar la app</h2>
+                <div class="bg-gray-900 rounded-lg p-6">
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Si no tiene la app, no recuerda el acceso o prefiere no usarla, envíe la solicitud por correo.
+                        Este camino no lo regresa a la tienda de aplicaciones.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Escriba a
+                        <mark class="pendiente">[PENDIENTE: correo de contacto y privacidad]</mark>
+                        desde el correo con el que creó la cuenta. Use el asunto
+                        <strong class="text-white">Eliminar mi cuenta de Hilo Negro</strong>.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Este borrador propone que el mensaje baste con el correo de la cuenta y la petición expresa de
+                        eliminarla. Los datos que el titular decida exigir, para comprobar que quien escribe es la
+                        persona titular y para no borrar la cuenta de alguien más, son
+                        <mark class="pendiente">[PENDIENTE: datos que debe incluir el correo de solicitud de eliminación]</mark>.
+                        La identificación que se aceptará es
+                        <mark class="pendiente">[PENDIENTE: qué identificación aceptará el responsable para acreditar la identidad]</mark>.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        La solicitud la atiende
+                        <mark class="pendiente">[PENDIENTE: persona o departamento que tramita datos personales]</mark>.
+                        No hace falta acudir a una sucursal para presentarla.
+                    </p>
+                </div>
+            </section>
+
+            <section id="que-ocurre" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">3. Qué se elimina y qué puede conservarse</h2>
+                <div class="bg-yellow-400 text-black rounded-lg p-6 mb-6">
+                    <p class="font-semibold mb-2">La política final todavía no está decidida.</p>
+                    <p class="leading-relaxed">
+                        Hoy la app, al borrar la cuenta, anonimiza el historial. El titular del negocio aún no elige entre
+                        ese resultado y el borrado completo. Hasta esa decisión, esta página describe las dos
+                        posibilidades y no fija una política definitiva.
+                        <mark class="pendiente">[PENDIENTE: elegir entre anonimizar el historial o borrarlo por completo]</mark>
+                    </p>
+                </div>
+
+                <h3 class="text-xl font-bold mb-3">Resultado A. El que hoy hace la app: anonimizar</h3>
+                <p class="text-gray-300 leading-relaxed mb-3">
+                    Es el comportamiento actual del software. No es, por ese solo hecho, la política aprobada.
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300 mb-6">
+                    <li>Se elimina la cuenta y el acceso con ese correo.</li>
+                    <li>Se eliminan los datos personales asociados a la persona, incluido el correo de la cuenta y los demás datos que permitan identificarla.</li>
+                    <li>Se cancelan las recompensas que no se hayan canjeado. Dejan de poder usarse.</li>
+                    <li>Las filas de visitas, tickets (folio e importe) y recompensas se conservan desvinculadas de la persona: el registro sigue en la base, sin el enlace a la cuenta ni a la identidad.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mb-3">Resultado B. Borrado completo, todavía no elegido</h3>
+                <p class="text-gray-300 leading-relaxed mb-3">
+                    Si el titular elige esta opción, la eliminación incluiría también el historial:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300 mb-6">
+                    <li>Se elimina la cuenta y el acceso con ese correo.</li>
+                    <li>Se eliminan los datos personales asociados a la persona.</li>
+                    <li>Se eliminan las filas de visitas, tickets y recompensas ligadas a esa cuenta, y se cancelan las recompensas no canjeadas.</li>
+                </ul>
+
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Hace falta que un abogado confirme si un historial desvinculado sigue siendo dato personal en este
+                    sistema:
+                    <mark class="pendiente">[PENDIENTE: confirmar con un abogado si el historial desvinculado sigue siendo dato personal]</mark>.
+                    Google Play pide que, al eliminar la cuenta, se eliminen los datos de la persona asociados a ella, y
+                    permite conservar ciertos datos solo por razones legítimas —por ejemplo seguridad, prevención de
+                    fraude o una obligación legal— dichas con claridad en el aviso de privacidad. La Ley Federal de
+                    Protección de Datos Personales en Posesión de los Particulares tiene sus propias reglas de
+                    cancelación, bloqueo y supresión. Qué opción cumple ambas cosas es parte de la decisión pendiente.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Datos que quizá deban conservarse aunque se borre la cuenta, y durante cuánto tiempo:
+                    <mark class="pendiente">[PENDIENTE: datos que deban conservarse por obligación legal, fiscal, seguridad o prevención de fraude, y por cuánto tiempo]</mark>.
+                    Los plazos generales de conservación del resto de las categorías están en el aviso de privacidad y
+                    son
+                    <mark class="pendiente">[PENDIENTE: plazos de conservación de cada categoría de datos]</mark>.
+                    Desactivar la cuenta o dejar de entrar no equivale a eliminarla.
+                </p>
+            </section>
+
+            <section id="plazo" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">4. En qué plazo se atiende</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    El plazo que Hilo Negro publicará como compromiso para completar la eliminación es
+                    <mark class="pendiente">[PENDIENTE: plazo para completar la eliminación de la cuenta]</mark>.
+                    Este borrador no inventa un número de días.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Si la solicitud se presenta como ejercicio del derecho de cancelación, la Ley Federal de Protección
+                    de Datos Personales en Posesión de los Particulares da al responsable hasta veinte días hábiles para
+                    comunicar la determinación y quince días hábiles más para hacerla efectiva. Esos plazos pueden
+                    ampliarse una sola vez por un periodo igual cuando las circunstancias lo justifiquen. El procedimiento
+                    y los datos que debe traer la solicitud están en la sección de derechos ARCO del
+                    <a class="underline hover:text-white" href="/privacidad/#arco">Aviso de privacidad</a>.
+                </p>
+            </section>
+
+            <section id="personal" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">5. Cuentas del personal de sucursal</h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Esta página describe la cuenta de la persona clienta. Si el personal que escanea códigos QR tiene
+                    cuentas propias en la app, la forma de eliminarlas es
+                    <mark class="pendiente">[PENDIENTE: cuentas del personal de sucursal y cómo se eliminan]</mark>.
+                </p>
+            </section>
+
+            <section id="despues" class="legal-anchor mb-12">
+                <h2 class="text-2xl font-bold mb-4">6. Después de eliminar la cuenta</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Una vez eliminada la cuenta, ese correo deja de tener sellos, recompensas por canjear y acceso al
+                    historial identificado. Volver a registrarse crea una cuenta nueva, sin los sellos de la anterior.
+                    Las recompensas no canjeadas que se cancelan no se reactivan.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    También puede leer los
+                    <a class="underline hover:text-white" href="/terminos/">Términos y condiciones</a>.
+                    Los tres documentos son borradores del
+                    <time datetime="2026-10-26">26 de octubre de 2026</time>.
+                </p>
+            </section>
+
+            <p class="text-gray-400 text-sm">
+                Última actualización de este borrador:
+                <time datetime="2026-10-26">26 de octubre de 2026</time>.
+                No es asesoría legal ni una política aprobada.
+            </p>
+        </main>
+    </div>
+
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-4">HILO NEGRO</h2>
+            <p class="mb-6">Conectando sabores, creando experiencias.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.facebook.com/profile.php?id=100067862124499" target="_blank"
+                    class="text-white hover:text-gray-400" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a target="_blank"
+                    href="https://www.instagram.com/hilonegropizzeria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="text-white hover:text-gray-400" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.tiktok.com/@hilonegropizzeria?is_from_webapp=1&sender_device=pc" target="_blank"
+                    class="text-white hover:text-gray-400" aria-label="TikTok"><i class="fab fa-tiktok fa-lg"></i></a>
+            </div>
+            <nav aria-label="Información legal" class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-sm">
+                <a href="/" class="text-gray-300 hover:text-white">Inicio</a>
+                <a href="/privacidad/" class="text-gray-300 hover:text-white">Aviso de privacidad (borrador)</a>
+                <a href="/terminos/" class="text-gray-300 hover:text-white">Términos y condiciones (borrador)</a>
+                <a href="/eliminar-cuenta/" class="text-white hover:text-white" aria-current="page">Eliminar cuenta (borrador)</a>
+            </nav>
+            <p class="text-gray-500">&copy; 2025 Hilo Negro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
