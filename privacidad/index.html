@@ -136,7 +136,9 @@
                 Al crear su cuenta pedimos su nombre (obligatorio) y, si usted quiere, su fecha de nacimiento. En Perfil
                 puede agregar, si lo desea, un teléfono y un correo de contacto. El acceso es con correo electrónico y
                 contraseña. Las preferencias sobre promociones por notificación push y campañas de cumpleaños se
-                registran en la pantalla de consentimiento de la sección 4.
+                registran en la pantalla de consentimiento de la sección 4. Cada visita se registra con la fecha, la
+                sucursal, el folio del ticket y los sellos. El canje de una recompensa guarda el folio del ticket donde
+                se canjeó. Ese folio es el comprobante de la visita o del canje y sirve para evitar abusos.
             </p>
             <div class="overflow-x-auto mb-6">
                 <table class="w-full text-left text-sm border-collapse">
@@ -174,9 +176,14 @@
                             <td class="py-3 align-top">Datos de contacto distintos del correo con el que entra</td>
                         </tr>
                         <tr class="border-b border-gray-800">
-                            <td class="py-3 pr-4 align-top">Fecha, sucursal y sellos de cada visita, y recompensas generadas, canjeadas o canceladas</td>
+                            <td class="py-3 pr-4 align-top">Fecha, sucursal, folio del ticket y sellos de cada visita</td>
                             <td class="py-3 pr-4 align-top">Aplicación, al registrar la visita</td>
-                            <td class="py-3 align-top">Operar el programa de lealtad. La visita se registra solo con la fecha, la sucursal y los sellos</td>
+                            <td class="py-3 align-top">Operar el programa de lealtad. La visita se registra con la fecha, la sucursal, el folio del ticket y los sellos. El folio es el comprobante de esa visita</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="py-3 pr-4 align-top">Recompensas generadas, canjeadas o canceladas, y folio del ticket del canje</td>
+                            <td class="py-3 pr-4 align-top">Aplicación, al generar o canjear la recompensa</td>
+                            <td class="py-3 align-top">Operar el programa de lealtad. El canje guarda el folio del ticket donde se canjeó, como comprobante para evitar abusos</td>
                         </tr>
                         <tr class="border-b border-gray-800">
                             <td class="py-3 pr-4 align-top">Código QR de la cuenta</td>
@@ -237,12 +244,12 @@
             </p>
             <ul class="list-disc pl-6 space-y-2 text-gray-300">
                 <li>Crear, autenticar y administrar la cuenta de lealtad.</li>
-                <li>Registrar el sello cuando usted paga su ticket, con la fecha, la sucursal y los sellos de la visita.</li>
+                <li>Registrar el sello cuando usted paga su ticket, con la fecha, la sucursal, el folio del ticket y los sellos de la visita.</li>
                 <li>Mostrar el código QR y permitir que el personal de la sucursal lo lea para acreditar la visita o el canje.</li>
-                <li>Generar recompensas y permitir su canje durante la vigencia que la aplicación indique.</li>
+                <li>Generar recompensas y permitir su canje durante la vigencia que la aplicación indique. El canje guarda el folio del ticket donde se canjeó.</li>
                 <li>Cancelar las recompensas no canjeadas cuando se elimina la cuenta.</li>
                 <li>Atender solicitudes de derechos ARCO, de revocación del consentimiento y de eliminación de cuenta. La página pública para pedir la eliminación es <a class="underline hover:text-white" href="/eliminar-cuenta/">www.hilonegro.com.mx/eliminar-cuenta</a>.</li>
-                <li>Proteger la cuenta y el programa frente a fraude, visitas falsas, cuentas múltiples, cesión de sellos y otros abusos.</li>
+                <li>Proteger la cuenta y el programa frente a fraude, visitas falsas, repetición de un folio, cuentas múltiples, cesión de sellos y otros abusos. El folio del ticket es el comprobante de la visita y del canje.</li>
                 <li>Cumplir obligaciones de conservación fiscal y contable, en los plazos de la sección 11.</li>
                 <li>Publicar en el sitio el menú, las sucursales, las promociones y los medios de contacto.</li>
                 <li>Operar el programa en las sucursales publicadas en www.hilonegro.com.mx.</li>
@@ -463,7 +470,7 @@
                             <td class="py-3 align-top">Se cancelan al eliminar la cuenta y no se reactivan</td>
                         </tr>
                         <tr class="border-b border-gray-800">
-                            <td class="py-3 pr-4 align-top">Historial de visitas anonimizado (fecha, sucursal y sellos), sin ningún dato que identifique a la persona</td>
+                            <td class="py-3 pr-4 align-top">Historial de visitas y de canjes anonimizado (fecha, sucursal, folio del ticket y sellos), sin ningún dato que identifique a la persona</td>
                             <td class="py-3 pr-4 align-top">5 años por el plazo fiscal (artículo 30 del Código Fiscal de la Federación)</td>
                             <td class="py-3 align-top">Después se elimina</td>
                         </tr>
@@ -495,9 +502,10 @@
                 identificación sea indirecta (artículo 2, fracción V). La disociación es el procedimiento por el cual
                 los datos ya no pueden asociarse a la persona ni permitir su identificación por su estructura, contenido
                 o grado de desagregación (artículo 2, fracción IX). El historial de visitas que se conserva al eliminar
-                la cuenta está anonimizado: no incluye nombre, correo, fecha de nacimiento, token de push, preferencias
-                ni ningún otro dato que identifique a la persona. Se guarda durante 5 años por el plazo fiscal y después
-                se elimina.
+                la cuenta está anonimizado: conserva la fecha, la sucursal, el folio del ticket y los sellos, y el folio
+                del ticket donde se canjeó una recompensa, y no incluye nombre, correo, fecha de nacimiento, token de
+                push, preferencias ni ningún otro dato que identifique a la persona. Se guarda durante 5 años por el
+                plazo fiscal y después se elimina.
             </p>
             <p class="text-gray-300 leading-relaxed">
                 En la aplicación, el borrado de los datos de la cuenta descritos arriba es inmediato. El historial de
@@ -520,8 +528,8 @@
                 [RAZÓN SOCIAL PENDIENTE], con domicilio en [DOMICILIO DE SUCURSAL PENDIENTE] (nombre comercial Hilo
                 Negro Restaurante), trata su nombre, su correo electrónico y su contraseña para crear y autenticar su
                 cuenta en la aplicación Hilo Negro y, si usted los proporciona, su fecha de nacimiento, un teléfono,
-                un correo de contacto y sus preferencias, además de la fecha, la sucursal y los sellos de sus visitas
-                y sus recompensas. Si usted lo acepta, también trata el token de notificaciones push y usa su fecha de
+                un correo de contacto y sus preferencias, además de la fecha, la sucursal, el folio del ticket y los
+                sellos de sus visitas y, en cada canje, el folio del ticket donde se canjeó la recompensa. Si usted lo acepta, también trata el token de notificaciones push y usa su fecha de
                 nacimiento para finalidades secundarias: promociones por notificación push y campañas de cumpleaños.
                 Esas campañas se basan en el número de visitas o de sellos, nunca en gasto. La aplicación pide ese
                 consentimiento en una pantalla 'Sí / Ahora no' que no viene preseleccionada. Negarse no afecta el
