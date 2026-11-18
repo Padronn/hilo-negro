@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html.paquetes-2026-ocultos [data-vigencia="paquetes-2026"] {
+            display: none !important;
+        }
+    </style>
+    <script>
+        (function () {
+            var corte = Date.parse("2026-12-24T00:00:00-06:00");
+            var ahora = Date.now();
+            try {
+                var simulada = new URLSearchParams(window.location.search).get("simular-fecha");
+                if (simulada) {
+                    var marca = Date.parse(simulada);
+                    if (!isNaN(marca)) ahora = marca;
+                }
+            } catch (error) {}
+            if (ahora >= corte) document.documentElement.classList.add("paquetes-2026-ocultos");
+        })();
+    </script>
     <title>Hilo Negro</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
@@ -91,34 +110,93 @@
         .promo-card:hover {
             transform: translateY(-5px);
         }
+
+        #inicio,
+        #promociones,
+        #paquetes,
+        #menu,
+        #sucursales,
+        #reservaciones,
+        #reseñas {
+            scroll-margin-top: 5.5rem;
+        }
+
+        .menu-preview {
+            transition: transform 0.3s ease;
+        }
+
+        .menu-preview:hover {
+            transform: translateY(-6px);
+        }
+
+        .menu-preview:focus {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        button[data-ampliar] {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            cursor: zoom-in;
+        }
+
+        button[data-ampliar] img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        button[data-ampliar]:focus {
+            outline: 2px solid #dc2626;
+            outline-offset: -2px;
+        }
     </style>
+    <link rel="stylesheet" href="css/hilo.css">
 </head>
 
 <body>
-    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <h1 class="text-white text-3xl font-bold">HILO NEGRO</h1>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#inicio" class="text-white hover:text-gray-300 nav-link">Inicio</a>
-                <a href="#promociones" class="text-white hover:text-gray-300 nav-link">Promociones</a>
-                <a href="#menu" class="text-white hover:text-gray-300 nav-link">Menú</a>
-                <a href="#sucursales" class="text-white hover:text-gray-300 nav-link">Sucursales</a>
-                <a href="#reservaciones" class="text-white hover:text-gray-300 nav-link">Reservaciones</a>
-                <a href="#reseñas" class="text-white hover:text-gray-300 nav-link">Reseñas</a>
-            </div>
+    <header class="site-nav">
+        <div class="site-nav-bar">
+            <a class="brand" href="#inicio">HILO NEGRO</a>
+            <nav class="site-links" aria-label="Principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#promociones">Promociones</a>
+                <a href="#paquetes" data-vigencia="paquetes-2026">Paquetes</a>
+                <a href="#menu">Menú</a>
+                <a href="#sucursales">Sucursales</a>
+                <a href="#reservaciones">Reservaciones</a>
+                <a href="#reseñas">Reseñas</a>
+            </nav>
+            <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-panel">
+                <span class="nav-toggle-bars" aria-hidden="true"></span>
+                <span class="sr-only">Abrir menú</span>
+            </button>
         </div>
-    </nav>
+        <nav id="nav-panel" class="nav-panel" hidden aria-label="Menú móvil">
+            <a href="#inicio">Inicio</a>
+            <a href="#promociones">Promociones</a>
+            <a href="#paquetes" data-vigencia="paquetes-2026">Paquetes</a>
+            <a href="#menu">Menú</a>
+            <a href="#sucursales">Sucursales</a>
+            <a href="#reservaciones">Reservaciones</a>
+            <a href="#reseñas">Reseñas</a>
+        </nav>
+    </header>
 
     <section id="inicio" class="hero-image flex items-center">
         <div class="hero-overlay flex items-center">
             <div class="container mx-auto px-4 py-32 text-center">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">HILO NEGRO</h1>
+                <h1 class="hero-title font-bold mb-4">HILO NEGRO</h1>
                 <p class="text-xl md:text-2xl mb-8">Experimenta lo desconocido</p>
                 <p class="text-lg md:text-xl mb-12 max-w-xl mx-auto">Nuestra cocina busca crear experiencias únicas, con
                     sabores y combinaciones arriesgadas pero meticulosamente estudiadas y aprobadas.</p>
-                <div class="flex justify-center space-x-4">
+                <div class="hero-actions">
                     <a href="#menu"
                         class="bg-white text-black px-8 py-3 rounded-full hover:bg-gray-200 transition duration-300">Ver
                         Menú</a>
@@ -159,6 +237,63 @@
         </div>
     </section>
 
+    <section id="paquetes" class="py-20 bg-black" data-vigencia="paquetes-2026">
+        <div class="container mx-auto px-4">
+            <p class="kicker">TEMPORADA 2026</p>
+            <h2 class="section-title">Paquetes Navideños 2026</h2>
+            <p class="section-lead">Cenas para compartir esta temporada. Toca cada paquete para leer el detalle.</p>
+
+            <div class="paquete-grid">
+                <article class="paquete">
+                    <button type="button" class="block w-full" data-ampliar
+                        data-caption="Black Christmas · $3,300 MXN · 6 personas">
+                        <img src="images/paquetes/black-christmas.webp" width="1035" height="1600" loading="lazy"
+                            alt="Paquete Black Christmas, $3,300 MXN, para 6 personas.">
+                    </button>
+                    <div class="paquete-copy">
+                        <h3>Black Christmas</h3>
+                        <p class="paquete-precio">$3,300</p>
+                        <p class="paquete-personas">6 personas</p>
+                        <p>Vino, mocktails, entrada, ensalada, pasta, 3 pizzas clásicas, postres y café.</p>
+                    </div>
+                </article>
+
+                <article class="paquete">
+                    <button type="button" class="block w-full" data-ampliar
+                        data-caption="Noche de Gala · $9,960 MXN · 15 personas">
+                        <img src="images/paquetes/noche-de-gala.webp" width="1035" height="1600" loading="lazy"
+                            alt="Paquete Noche de Gala, $9,960 MXN, para 15 personas.">
+                    </button>
+                    <div class="paquete-copy">
+                        <h3>Noche de Gala</h3>
+                        <p class="paquete-precio">$9,960</p>
+                        <p class="paquete-personas">15 personas</p>
+                        <p>Vino, mocktails, entradas, ensaladas, pastas, 8 pizzas, postres y café.</p>
+                    </div>
+                </article>
+
+                <article class="paquete">
+                    <button type="button" class="block w-full" data-ampliar
+                        data-caption="Brindis Negro · $13,700 MXN · 20 personas">
+                        <img src="images/paquetes/brindis-negro.webp" width="1035" height="1600" loading="lazy"
+                            alt="Paquete Brindis Negro, $13,700 MXN, para 20 personas.">
+                    </button>
+                    <div class="paquete-copy">
+                        <h3>Brindis Negro</h3>
+                        <p class="paquete-precio">$13,700</p>
+                        <p class="paquete-personas">20 personas</p>
+                        <p>Tres vinos, mocktails, entradas, ensaladas, pastas, 10 pizzas, postres y café.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="aviso">
+                <p>Promociones válidas del 23 de noviembre al 23 de diciembre de 2026</p>
+                <p>Precios en MXN. Sujeto a disponibilidad.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="py-20 bg-white text-black">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
@@ -172,7 +307,7 @@
                         hornos tradicionales.</p>
                     <p class="text-lg mb-8">Nuestra pasión por la gastronomía italiana se refleja en cada platillo,
                         fusionando técnicas tradicionales con sabores mexicanos para crear experiencias únicas.</p>
-                    <div class="flex space-x-6">
+                    <div class="stat-row">
                         <div>
                             <p class="text-3xl font-bold">4.8/5</p>
                             <p class="text-gray-600">Calificación</p>
@@ -193,112 +328,56 @@
 
     <section id="menu" class="py-20 bg-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-4 text-center">Nuestro Menú</h2>
-            <p class="text-xl text-center mb-16 max-w-3xl mx-auto">Explora nuestra variedad de pizzas artesanales y
-                especialidades de la casa, preparadas con los mejores ingredientes y técnicas italianas.</p>
+            <p class="kicker">LA CARTA</p>
+            <h2 class="section-title">Nuestro Menú</h2>
+            <p class="section-lead">Bebidas, pizzas, pastas, postres y vinos. Mira una vista previa y abre el menú
+                completo aquí mismo.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/hawaiana.jpg" alt="Hawaiana" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Hawaiana</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de 35 cm con salsa pomodoro, queso mozzarella,
-                            jamón de pierna y trozos de piña.</p>
-                        <p class="text-2xl font-bold">$260 MXN</p>
-                    </div>
-                </div>
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/salchichaItaliana.jpg" alt="Salchicha Italiana" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Salchicha Italiana</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de 35 cm con salsa pomodoro, queso mozzarella,
-                            salchicha
-                            italiana, espinaca, cebolla morada, pimiento rojo y rodajas de aceitunas negras.</p>
-                        <p class="text-2xl font-bold">$270 MXN</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/deavola.jpg" alt="Deavola" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Deavola</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de 35 cm con salsa pomodoro, queso mozzarella,
-                            pepperoni, queso provolone, chile seco y aceite de salsa macha.</p>
-                        <p class="text-2xl font-bold">$270 MXN</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/hongosConTrufa.jpg" alt="Mix De Hongos Con Aceite De Trufa"
-                        class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Mix De Hongos Con Aceite De Trufa</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de 35 cm con salsa pomodoro, queso mozzarella, mix
-                            de hongos
-                            y aceite de trufa.</p>
-                        <p class="text-2xl font-bold">$290 MXN</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/higoParmesano.jpg" alt="Higo Parmesano" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Higo Parmesano</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de 35 cm, con base de queso mozarella, higos
-                            caramelizados y queso parmesano.</p>
-                        <p class="text-2xl font-bold">$270 MXN</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/prosciutto.jpg" alt="Prosciutto" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Prosciutto</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de 35 cm con salsa pomodoro, queso mozarella,
-                            arúgula y
-                            prosciutto.</p>
-                        <p class="text-2xl font-bold">$300 MXN</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/peraYGorgonzola.jpg" alt="Pera y Gorgonzola" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Pera y Gorgonzola</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de 35 cm con base de queso mozarella, queso
-                            gorgonzola, pera, arúgula, nuez y miel.</p>
-                        <p class="text-2xl font-bold">$310 MXN</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/meatLover.jpg" alt="Meat Lover" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Meat Lover</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de 35 cm con base de salsa pomodoro, queso
-                            mozzarella,
-                            tocino, bolitas de carne y salchicha italiana.</p>
-                        <p class="text-2xl font-bold">$290 MXN</p>
-                    </div>
-                </div>
-                <div class="bg-gray-900 rounded-3xl overflow-hidden menu-item flex flex-col">
-                    <img src="images/pistaccio.jpg" alt="Pistaccio" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Pistaccio</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Pizza de nutella con salsa de pistache y pistaches</p>
-                        <p class="text-2xl font-bold">$140 MXN</p>
-                    </div>
-                </div>
-
-
+            <div class="preview-grid">
+                <a href="menu/#bebidas" class="preview-card">
+                    <span class="preview-frame from-left">
+                        <img src="images/menu/thumbs/bebidas.webp" alt="" width="900" height="675" loading="lazy">
+                    </span>
+                    <span class="preview-meta">
+                        <span class="preview-kicker">01</span>
+                        <span class="preview-name">Bebidas y coctelería</span>
+                    </span>
+                </a>
+                <a href="menu/#comida" class="preview-card">
+                    <span class="preview-frame from-left">
+                        <img src="images/menu/thumbs/comida.webp" alt="" width="900" height="675" loading="lazy">
+                    </span>
+                    <span class="preview-meta">
+                        <span class="preview-kicker">02</span>
+                        <span class="preview-name">Pizzas, pastas y más</span>
+                    </span>
+                </a>
+                <a href="menu/#postres" class="preview-card">
+                    <span class="preview-frame">
+                        <img src="images/menu/thumbs/postres.webp" alt="" width="900" height="1163" loading="lazy">
+                    </span>
+                    <span class="preview-meta">
+                        <span class="preview-kicker">03</span>
+                        <span class="preview-name">Postres y crepas</span>
+                    </span>
+                </a>
+                <a href="menu/#vinos" class="preview-card">
+                    <span class="preview-frame">
+                        <img src="images/menu/thumbs/vinos.webp" alt="" width="900" height="1163" loading="lazy">
+                    </span>
+                    <span class="preview-meta">
+                        <span class="preview-kicker">04</span>
+                        <span class="preview-name">Carta de vinos</span>
+                    </span>
+                </a>
             </div>
 
             <div class="text-center mt-12">
-                <a href="https://drive.google.com/file/d/1DlxxUyfDoeFISrL1W2aRekCYv5OmZakE/view" target="_blank"
-                    target="_blank"
-                    class="bg-white text-black px-8 py-3 rounded-full hover:bg-gray-200 transition duration-300">Ver
-                    Menú Completo</a>
+                <a href="menu/" class="btn btn-light">Ver menú completo</a>
+                <p class="file-links text-sm text-gray-400">
+                    <a href="menu/menu-hilo-negro.pdf" class="underline hover:text-white">Comida y bebidas (PDF)</a>
+                    <a href="menu/vinos-postres.pdf" class="underline hover:text-white">Vinos y postres (PDF)</a>
+                </p>
             </div>
         </div>
     </section>
@@ -650,6 +729,8 @@
             <p class="text-gray-500">&copy; 2026 HN PIZZERIA VALLE. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="js/nav.js"></script>
+    <script src="js/visor.js"></script>
 
 </body>
 

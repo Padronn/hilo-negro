@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html.paquetes-2026-ocultos [data-vigencia="paquetes-2026"] {
+            display: none !important;
+        }
+    </style>
+    <script>
+        (function () {
+            var corte = Date.parse("2026-12-24T00:00:00-06:00");
+            var ahora = Date.now();
+            try {
+                var simulada = new URLSearchParams(window.location.search).get("simular-fecha");
+                if (simulada) {
+                    var marca = Date.parse(simulada);
+                    if (!isNaN(marca)) ahora = marca;
+                }
+            } catch (error) {}
+            if (ahora >= corte) document.documentElement.classList.add("paquetes-2026-ocultos");
+        })();
+    </script>
+    <title>Menú | Hilo Negro</title>
+    <meta name="description"
+        content="Menú de Hilo Negro: bebidas, pizzas, pastas, postres, cerveza artesanal y vinos. Léelo aquí, sin salir del sitio.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus::after {
+            width: 100%;
+        }
+
+        .ancla {
+            scroll-margin-top: 8.5rem;
+        }
+
+        .hoja {
+            background: #fff6e0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+        }
+
+        button[data-ampliar] {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            cursor: zoom-in;
+        }
+
+        button[data-ampliar] img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        button[data-ampliar]:focus {
+            outline: 2px solid #dc2626;
+            outline-offset: -2px;
+        }
+
+        .promo-card {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+    <link rel="stylesheet" href="/css/hilo.css">
+</head>
+
+<body>
+    <header class="site-nav">
+        <div class="site-nav-bar">
+            <a class="brand" href="/">HILO NEGRO</a>
+            <nav class="site-links" aria-label="Principal">
+                <a href="/#inicio">Inicio</a>
+                <a href="/#promociones">Promociones</a>
+                <a href="#paquetes" data-vigencia="paquetes-2026">Paquetes</a>
+                <a href="/menu/" aria-current="page">Menú</a>
+                <a href="/#sucursales">Sucursales</a>
+                <a href="/#reservaciones">Reservaciones</a>
+                <a href="/#reseñas">Reseñas</a>
+            </nav>
+            <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-panel">
+                <span class="nav-toggle-bars" aria-hidden="true"></span>
+                <span class="sr-only">Abrir menú</span>
+            </button>
+        </div>
+        <nav id="nav-panel" class="nav-panel" hidden aria-label="Menú móvil">
+            <a href="/#inicio">Inicio</a>
+            <a href="/#promociones">Promociones</a>
+            <a href="#paquetes" data-vigencia="paquetes-2026">Paquetes</a>
+            <a href="/menu/" aria-current="page">Menú</a>
+            <a href="/#sucursales">Sucursales</a>
+            <a href="/#reservaciones">Reservaciones</a>
+            <a href="/#reseñas">Reseñas</a>
+        </nav>
+    </header>
+
+    <header class="container mx-auto px-4 pt-28 pb-4 text-center">
+        <p class="mb-2"><a href="/" class="back-link">← Inicio</a></p>
+        <h1 class="section-title">Menú</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">Bebidas, comida, postres y vinos de Hilo Negro.
+            Toca cualquier página para ampliarla y leerla.</p>
+    </header>
+
+    <nav class="jump-nav" aria-label="Secciones del menú">
+        <div>
+            <a href="#bebidas">Bebidas</a>
+            <a href="#comida">Comida</a>
+            <a href="#cervezas">Cerveza</a>
+            <a href="#postres">Postres</a>
+            <a href="#vinos">Vinos</a>
+            <a href="#paquetes" class="jump-red" data-vigencia="paquetes-2026">Paquetes</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+        <section id="bebidas" class="ancla mb-16">
+            <h2 class="rule text-3xl font-bold mb-2 text-center">Bebidas y coctelería</h2>
+            <p class="text-center text-gray-400 mb-6">Mezcales, tequila, carajillos, mixología, mocktails, café y más.</p>
+            <div class="hoja">
+                <button type="button" data-ampliar data-caption="Bebidas y coctelería">
+                    <img src="/images/menu/bebidas.webp" width="2520" height="1890"
+                        alt="Página del menú de bebidas: mezcales, tequila, carajillos, cremas y destilados, mixología, mocktails, refrescos, cerveza, café, té e infusiones, con precios.">
+                </button>
+            </div>
+            <p class="text-center text-sm text-gray-400 mt-3">Toca para ampliar y leer</p>
+        </section>
+
+        <section id="comida" class="ancla mb-16">
+            <h2 class="rule text-3xl font-bold mb-2 text-center">Comida</h2>
+            <p class="text-center text-gray-400 mb-6">Entradas, ensaladas, pizzas, pastas, hamburguesas y extras.</p>
+            <div class="hoja">
+                <button type="button" data-ampliar data-caption="Pizzas, pastas, entradas y más">
+                    <img src="/images/menu/comida.webp" width="2520" height="1890" loading="lazy"
+                        alt="Página del menú de comida: entradas, ensaladas, pizzas de la casa, pizzas clásicas, pastas, hamburguesas, extras y la política de la promoción 2x1, con precios.">
+                </button>
+            </div>
+            <p class="text-center text-sm text-gray-400 mt-3">Toca para ampliar y leer</p>
+        </section>
+
+        <section id="cervezas" class="ancla mb-16">
+            <h2 class="rule text-3xl font-bold mb-2 text-center">Cerveza artesanal</h2>
+            <p class="text-center text-gray-400 mb-6">Barricas y botellas de la carta, más los avisos de la casa.</p>
+            <div class="max-w-lg mx-auto mb-8">
+                <div class="hoja">
+                    <button type="button" data-ampliar data-caption="Portada de cerveza artesanal">
+                        <img src="/images/menu/portada-cerveza.webp" width="1105" height="1428" loading="lazy"
+                            alt="Portada de cerveza artesanal con ilustración de botellas y el nombre Hilo Negro.">
+                    </button>
+                </div>
+            </div>
+            <div class="hoja max-w-3xl mx-auto">
+                <button type="button" data-ampliar data-caption="Cervezas artesanales">
+                    <img src="/images/menu/cervezas-artesanales.webp" width="1530" height="1977" loading="lazy"
+                        alt="Carta de cervezas artesanales y avisos legales de precios, propina y venta de alcohol.">
+                </button>
+            </div>
+            <p class="text-center text-sm text-gray-400 mt-3">Toca para ampliar y leer</p>
+        </section>
+
+        <section id="postres" class="ancla mb-16">
+            <h2 class="rule text-3xl font-bold mb-2 text-center">Postres y pizzas dulces</h2>
+            <p class="text-center text-gray-400 mb-6">Cremas, crepas y las pizzas dulces de la casa.</p>
+            <div class="max-w-lg mx-auto mb-8">
+                <div class="hoja">
+                    <button type="button" data-ampliar data-caption="Portada de postres">
+                        <img src="/images/menu/portada-postres.webp" width="1105" height="1428" loading="lazy"
+                            alt="Portada de postres con ilustración de un pastel y el nombre Hilo Negro.">
+                    </button>
+                </div>
+            </div>
+            <div class="hoja max-w-3xl mx-auto">
+                <button type="button" data-ampliar data-caption="Postres, crepas y pizzas dulces">
+                    <img src="/images/menu/postres.webp" width="1530" height="1977" loading="lazy"
+                        alt="Postres, crepas y pizzas dulces con precios: crème brûlée, panna cotta, pastel de chocolate, crepas y pizzas Pistaccio y Manzana dulce.">
+                </button>
+            </div>
+            <p class="text-center text-sm text-gray-400 mt-3">Toca para ampliar y leer</p>
+        </section>
+
+        <section id="vinos" class="ancla mb-16">
+            <h2 class="rule text-3xl font-bold mb-2 text-center">Vinos</h2>
+            <p class="text-center text-gray-400 mb-6">Tinto, blanco, rosado y copeo.</p>
+            <div class="max-w-lg mx-auto mb-8">
+                <div class="hoja">
+                    <button type="button" data-ampliar data-caption="Portada de vinos">
+                        <img src="/images/menu/portada-vinos.webp" width="1105" height="1428" loading="lazy"
+                            alt="Portada de vinos con ilustración de una botella y el nombre Hilo Negro.">
+                    </button>
+                </div>
+            </div>
+            <div class="hoja max-w-3xl mx-auto">
+                <button type="button" data-ampliar data-caption="Carta de vinos">
+                    <img src="/images/menu/vinos.webp" width="1615" height="2087" loading="lazy"
+                        alt="Carta de vinos tintos, blancos, rosados y vinos de copeo, con precios y país de origen.">
+                </button>
+            </div>
+            <p class="text-center text-sm text-gray-400 mt-3">Toca para ampliar y leer</p>
+        </section>
+
+        <section id="portadas" class="ancla mb-16">
+            <h2 class="rule text-3xl font-bold mb-2 text-center">Portadas</h2>
+            <p class="text-center text-gray-400 mb-6">Las portadas del menú impreso.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="hoja">
+                    <button type="button" data-ampliar data-caption="Portada con copas">
+                        <img src="/images/menu/portada-copas.webp" width="1733" height="1300" loading="lazy"
+                            alt="Portada ilustrada con copas de vino y la palabra Hilo Negro.">
+                    </button>
+                </div>
+                <div class="hoja">
+                    <button type="button" data-ampliar data-caption="Portada con pizzas">
+                        <img src="/images/menu/portada-pizzas.webp" width="1733" height="1300" loading="lazy"
+                            alt="Portada ilustrada con pizzas y la palabra Hilo Negro.">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="paquetes" class="ancla mb-16" data-vigencia="paquetes-2026">
+            <p class="kicker">TEMPORADA 2026</p>
+            <h2 class="section-title">Paquetes Navideños 2026</h2>
+            <p class="section-lead">Cenas para compartir. Toca cada paquete para leer el detalle.</p>
+            <div class="paquete-grid">
+                <article class="paquete">
+                    <button type="button" class="block w-full" data-ampliar
+                        data-caption="Black Christmas · $3,300 MXN · 6 personas">
+                        <img src="/images/paquetes/black-christmas.webp" width="1035" height="1600" loading="lazy"
+                            alt="Paquete Black Christmas, $3,300 MXN, para 6 personas.">
+                    </button>
+                    <div class="paquete-copy">
+                        <h3>Black Christmas</h3>
+                        <p class="paquete-precio">$3,300</p>
+                        <p class="paquete-personas">6 personas</p>
+                        <p>Vino, mocktails, entrada, ensalada, pasta, 3 pizzas clásicas, postres y café.</p>
+                    </div>
+                </article>
+                <article class="paquete">
+                    <button type="button" class="block w-full" data-ampliar
+                        data-caption="Noche de Gala · $9,960 MXN · 15 personas">
+                        <img src="/images/paquetes/noche-de-gala.webp" width="1035" height="1600" loading="lazy"
+                            alt="Paquete Noche de Gala, $9,960 MXN, para 15 personas.">
+                    </button>
+                    <div class="paquete-copy">
+                        <h3>Noche de Gala</h3>
+                        <p class="paquete-precio">$9,960</p>
+                        <p class="paquete-personas">15 personas</p>
+                        <p>Vino, mocktails, entradas, ensaladas, pastas, 8 pizzas, postres y café.</p>
+                    </div>
+                </article>
+                <article class="paquete">
+                    <button type="button" class="block w-full" data-ampliar
+                        data-caption="Brindis Negro · $13,700 MXN · 20 personas">
+                        <img src="/images/paquetes/brindis-negro.webp" width="1035" height="1600" loading="lazy"
+                            alt="Paquete Brindis Negro, $13,700 MXN, para 20 personas.">
+                    </button>
+                    <div class="paquete-copy">
+                        <h3>Brindis Negro</h3>
+                        <p class="paquete-precio">$13,700</p>
+                        <p class="paquete-personas">20 personas</p>
+                        <p>Tres vinos, mocktails, entradas, ensaladas, pastas, 10 pizzas, postres y café.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="aviso">
+                <p>Promociones válidas del 23 de noviembre al 23 de diciembre de 2026</p>
+                <p>Precios en MXN. Sujeto a disponibilidad.</p>
+            </div>
+        </section>
+
+        <section id="descargas" class="ancla text-center border-t border-gray-800 pt-12">
+            <h2 class="text-2xl font-bold mb-4">Descargar el menú</h2>
+            <p class="text-gray-300 mb-6">Los mismos archivos, guardados en este sitio.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/menu/menu-hilo-negro.pdf" class="btn btn-ghost">PDF de comida y bebidas</a>
+                <a href="/menu/vinos-postres.pdf" class="btn btn-ghost">PDF de vinos y postres</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">HILO NEGRO</h3>
+            <p class="mb-6">Conectando sabores, creando experiencias.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.facebook.com/profile.php?id=100067862124499" target="_blank"
+                    rel="noopener noreferrer" class="text-white hover:text-gray-400"><i
+                        class="fab fa-facebook-f fa-lg"></i></a>
+                <a target="_blank" rel="noopener noreferrer"
+                    href="https://www.instagram.com/hilonegropizzeria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="text-white hover:text-gray-400"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.tiktok.com/@hilonegropizzeria?is_from_webapp=1&sender_device=pc" target="_blank"
+                    rel="noopener noreferrer" class="text-white hover:text-gray-400"><i
+                        class="fab fa-tiktok fa-lg"></i></a>
+            </div>
+            <nav aria-label="Información legal" class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-sm">
+                <a href="/privacidad/" class="text-gray-300 hover:text-white">Aviso de privacidad</a>
+                <a href="/terminos/" class="text-gray-300 hover:text-white">Términos y condiciones</a>
+                <a href="/eliminar-cuenta/" class="text-gray-300 hover:text-white">Eliminar cuenta</a>
+            </nav>
+            <p class="text-gray-500">&copy; 2026 HN PIZZERIA VALLE. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="/js/nav.js"></script>
+    <script src="/js/visor.js"></script>
+</body>
+
+</html>
