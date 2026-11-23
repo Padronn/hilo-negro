@@ -5,7 +5,7 @@
 - GitHub Pages publishes the root of `main` at `www.hilonegro.com.mx`, as configured in `CNAME`. Merging into `main` deploys the production site.
 - Every PR is **Red** and requires human review. Only JP merges. Agents must never push to `main`, merge a PR, or deploy the site.
 - Work on a `codex/<task>` branch and open a draft PR after saving the verification evidence below. State in the PR that it is Red because merging deploys production.
-- Keep secrets out of Git. Never commit credentials, tokens, private keys, or files containing them.
+- Keep secrets out of Git, PR text, logs and chat. Never commit credentials, tokens, private keys, or files containing them.
 
 ## Site structure and editing
 
@@ -19,12 +19,14 @@
 
 - Never leave `[PENDIENTE]` in published site content.
 - Get JP’s explicit approval before editing `/privacidad`, `/terminos`, `/eliminar-cuenta`, or any legal text. Responsible party is **HN PIZZERIA VALLE**, RFC `HPV260908IQ0`, Parque Vía 198, Col. Cuauhtémoc, C.P. 06500, CDMX.
-- Paquetes Navideños 2026 are valid November 23 through December 23, 2026, inclusive. The packages and their navigation links must automatically hide at 00:00 on December 24, 2026 in `America/Mexico_City`. Test both `/` and `/menu/` with `?simular-fecha=2026-11-23T00:00:00-06:00`, `?simular-fecha=2026-12-23T23:59:59-06:00`, and `?simular-fecha=2026-12-24T00:00:00-06:00`.
-- Tlalpan closes Sundays at 11:00 PM. All other operating branches close Sundays at 9:00 PM. Get JP’s approval before changing any hours.
+- Paquetes Navideños 2026 are valid November 23 through December 23, 2026, inclusive. The packages and their navigation links must automatically hide at 00:00 on December 24, 2026 in `America/Mexico_City`.
+- Tlalpan abre el domingo de 12:00 PM a 11:00 PM. All other operating branches close Sundays at 9:00 PM. Get JP’s approval before changing any hours.
 - Match menu copy and prices to the corresponding menu PDF. Reproduce the PDF’s spelling exactly, including typographical errors.
 - Cuernavaca is not operating. If it is listed on a non-legal page, label it as not operating. If you remove the listing from a non-legal page, retain a note on that page stating that Cuernavaca is not operating.
 
 ## Proof required before opening a PR
+
+Never invent results; state what was checked and what was not.
 
 1. Serve the repo root locally with `python3 -m http.server 8000 --bind 127.0.0.1` and open `http://127.0.0.1:8000/`.
 2. Capture desktop and mobile screenshots of the affected pages. For documentation-only changes, verify that the locally served site renders as it did on the base commit.
