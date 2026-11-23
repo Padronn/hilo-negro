@@ -1,10 +1,17 @@
 #!/bin/sh
+# From the repo root, run ./scripts/verify.sh with Python 3.9+.
+# Screenshots require Node.js and headless Chrome/Chromium (or VERIFY_CHROME=/path/to/chrome).
+# Set SKIP_SCREENSHOTS=1 to explicitly run the site checks without taking screenshots.
 set -eu
 
 if ! command -v python3 >/dev/null 2>&1; then
-    echo "FAIL: Python 3 is required to verify the site." >&2
+    echo "FAIL: Python 3.9+ is required to verify the site (python3 was not found on PATH)." >&2
     exit 1
 fi
+# Check in a separate invocation so older interpreters can report the error before parsing the verifier.
+python3 -c 'import sys
+if sys.version_info < (3, 9):
+    sys.exit("FAIL: Python 3.9+ is required to verify the site (found %s)." % sys.version.split()[0])'
 
 root=$(CDPATH='' cd "$(dirname "$0")/.." && pwd)
 exec python3 -u - "$root" <<'PY'
@@ -250,27 +257,31 @@ def verify_http(port, targets, errors):
 
 
 def screenshots(origin, errors):
-    browser = os.environ.get("VERIFY_CHROME") or next(
+    configured_browser = os.environ.get("VERIFY_CHROME")
+    browser = shutil.which(configured_browser) if configured_browser else next(
         (path for name in ("google-chrome", "chromium", "chromium-browser", "chrome")
          if (path := shutil.which(name))),
         None,
     )
     mac_chrome = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
-    if not browser and mac_chrome.is_file():
-        browser = str(mac_chrome)
+    if not browser and not configured_browser:
+        browser = shutil.which(str(mac_chrome))
     node = shutil.which("node")
-    if not browser or not node:
-        print("SCREENSHOTS SKIPPED: headless Chrome/Chromium and Node.js are needed for capture.")
-        print("To capture manually, run python3 -m http.server 8000 --bind 127.0.0.1 from the site root.")
-        print("Capture / and /menu/ at http://127.0.0.1:8000 in browser responsive mode at 1280 and 390 px.")
-        print(f"Save the PNGs in {PROOF} and stop the manual server with Ctrl+C.")
-        print("To use a different headless Chrome binary, set VERIFY_CHROME to its path and rerun.")
-        return "skipped"
+    helper = ROOT / "scripts/verify-screenshots.js"
+    if not node:
+        errors.append("Node.js is required for screenshots (node was not found on PATH).")
+    if not browser:
+        errors.append("Chrome or Chromium is required for screenshots. Set VERIFY_CHROME to an executable browser path.")
+    if not helper.is_file():
+        errors.append(f"Screenshot helper is missing: {helper}")
+    if errors:
+        print("To run only the site checks, explicitly set SKIP_SCREENSHOTS=1.")
+        return "unavailable"
 
     PROOF.mkdir(exist_ok=True)
     with TemporaryDirectory(prefix="hn-site-verify-") as profile:
         result = subprocess.run(
-            [node, str(ROOT / "scripts/verify-screenshots.js"), browser, profile, origin, str(PROOF)],
+            [node, str(helper), browser, profile, origin, str(PROOF)],
             check=False,
         )
     if result.returncode:
@@ -281,6 +292,9 @@ def screenshots(origin, errors):
 
 def main():
     errors = []
+    skip_screenshots = os.environ.get("SKIP_SCREENSHOTS") == "1"
+    if skip_screenshots:
+        print("WARNING: SKIP_SCREENSHOTS=1; screenshots were not taken.")
     targets, page_count, anchor_count = find_targets(errors)
     handler = partial(QuietHandler, directory=str(ROOT))
     with ThreadingHTTPServer(("127.0.0.1", 0), handler) as server:
@@ -290,7 +304,12 @@ def main():
         print(f"Serving {ROOT} at {origin}")
         try:
             verify_http(server.server_port, targets, errors)
-            screenshot_status = screenshots(origin, errors) if not errors else "skipped after failed checks"
+            if skip_screenshots:
+                screenshot_status = "skipped by request"
+            elif errors:
+                screenshot_status = "skipped after failed checks"
+            else:
+                screenshot_status = screenshots(origin, errors)
         finally:
             server.shutdown()
             worker.join()

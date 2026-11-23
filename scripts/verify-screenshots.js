@@ -95,6 +95,10 @@ capture().catch((error) => {
   console.error("SCREENSHOT FAILED: " + error.message);
   process.exitCode = 1;
 }).finally(async () => {
-  chrome.kill();
+  if (!chrome.pid || chrome.exitCode !== null || chrome.signalCode !== null) return;
+  // Let Chrome stop its child processes before the verifier removes the temporary profile.
+  const deadline = setTimeout(() => chrome.kill(), 5000);
+  send("Browser.close").catch(() => chrome.kill());
   await closed.catch(() => {});
+  clearTimeout(deadline);
 });
