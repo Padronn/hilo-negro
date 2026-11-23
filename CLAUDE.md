@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+Follow [AGENTS.md](AGENTS.md) for current repository instructions.
+
 ## What this is
 
 Marketing site for Hilo Negro, a pizzeria chain in Mexico City. It's a single static page (`index.html`, Spanish, `lang="es"`) served by **GitHub Pages** from the `main` branch root, on the custom domain in `CNAME` (`www.hilonegro.com.mx`). A push to `main` deploys.
